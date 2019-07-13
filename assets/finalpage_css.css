@@ -1,34 +1,48 @@
 body {
-    background-color: rgb(77,140,255);
+    background-color: white;
     text-align: center;
-    color: white;
+   
 }
 
 #recipe_Img {
     background-color: blue;
+    float: left;
+    margin-top: -5px;
 }
 
 .boxed {
     background-color: white;
-    color: black;
-    width: 300px;
+    color:white;
+    width: 420px;
+    height: 315px;
     border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 30px;
     display:inline-block
   }
 
   h4 {
       margin-top: 20px;
+      margin-bottom: 25px;
   }
 
 .youtube {
     background-color: white;
     color: black;
-    width: 300px;
-    border: 15px solid red;
-    padding: 50px;
-    margin: 20px;
+    width: 400x;
+    height: 305px;
+    border: 15px solid green;
+    padding: 0px;
+    margin-top: 25px;
+    /* display:inline-block; */
+    float: right;
 }
 
-@media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }}
+#email {
+    float:left;
+    align-content: center;
+    margin-top: 20px;
+}
+
+/* @media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }} */
