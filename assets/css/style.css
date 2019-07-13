@@ -1,6 +1,6 @@
 #pageHead {
    margin:0 auto;
-   margin-top: 30px;
+   margin-top: 50px;
    margin-bottom: 30px;
 }
 
@@ -9,10 +9,8 @@ img {
    vertical-align: middle;
 }
 
-
-
 .jumbotron {
-   margin-top: 50px;
+   margin-top: 20px;
 }
 
 .jumbotron h1 {
@@ -21,7 +19,6 @@ img {
    font-family: 'Amatic SC', cursive;
    font-weight: bolder;
    text-shadow: 3px 3px grey;
-
 }
 
 .jumbotron p {
@@ -30,36 +27,4 @@ img {
    color: white;
    font-family: 'Amatic SC', cursive;
    text-shadow: 2px 2px grey;
-
-}
-
-.submit {
-   background-color: grey;
-   color: white;
-   font-size: 40px;
-   font-family: 'Amatic SC', cursive;
-   font-weight: bolder;
-   /* margin-bottom: 30px; */
-}
-
-.imgBox {
-   border: 1px solid rgb(180, 179, 179);
-}
-
-#section {
-   border: 1px solid white;
-   background-color: rgb(90, 89, 89);
-   width: 350px;
-   height: 350px;
-}
-
-#text {
-   background-color: white;
-   width: 80%;
-   text-align: center;
-   margin: 0 auto;
-   margin-top: 270px;
-   opacity: 0.7;
-   font-size: 50px;
-   font-family: 'Amatic SC', cursive;
 }
