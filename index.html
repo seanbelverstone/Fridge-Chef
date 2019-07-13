@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/welcomestyle.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+
+    <title>Fridge Chef</title>
+</head>
+<body>
+    <header>
+        <div id="topbar">
+            <div class="jumbotron">
+                    <div id="logo">
+                        <img src="assets/images/fridgecheflogo.png" width="150" height="150">
+                    </div>
+                <p>Lots of leftovers lying around?</p>
+                <p>Don't want to go out to the store?</p>
+                <p>Tired of instant ramen?</p>
+                <p>Become a gourmet chef using whatever you already have lying around!</p>
+                <p>Click the fridge to get started!</p>
+
+            </div>
+        </div>
+    </header>
+
+    <input type="image" src="assets/images/fridgeclosed.png" data-state="closed" closed="assets/images/fridgeclosed.png" openSrc="assets/images/fridgeopen.png" width="135" height="225" name="saveForm" class="btTxt submit" id="fridgePic" />
+
+<!-- FridgeClosed: 135x225-->
+
+<!-- FridgeOpen = 267x222 -->
+
+    <footer>
+        <div class="jumbotron" id="bottombar">
+            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">GET STARTED</a> -->
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript function that wraps everything
+        $(document).ready(function() {
+
+            var fridge = $("#fridgePic");
+
+            $("#fridgePic").on("click", function() {
+                
+                
+                console.log("The fridge is clicked!");
+    
+    
+                //make a variable named state and then store the image's data-state into it
+                var state = $(this).attr("data-state");
+                console.log("The image's state is: " + state);
+
+                // Check if the variable state is equal to 'closed'
+                if (state === "closed") {
+                    fridge.animate({ height: "300px", width: "345px" });
+                    // update the src attribute of this image to it's open value
+                    $(this).attr("src", $(this).attr("openSrc"));
+                    console.log($(this).attr("openSrc"));
+                    // update the data-state attribute to 'animate'.
+                    $(this).attr("data-state", "open");
+                    // If state is equal to 'animate'... 
+                } else {
+                    fridge.animate({ height: "225px", width: "135px" });
+                    // update the src attribute of this image to it's closed value
+                    $(this).attr("src", $(this).attr("closed"));
+                    // update the data-state attribute to 'closed'
+                    $(this).attr("data-state", "closed");
+                }
+            });
+
+
+
+
+
+
+        });
+    </script>
+    
+</body>
+</html>
