@@ -8,9 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Link Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Link Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -28,21 +26,22 @@
 <body>
     <div class="container">
         <div class="row">
-            <div id="pageHead">
-                <img src="assets/images/fridgecheflogo.png" id="logo">
+            <div class="col s12">
+                <div id="pageHead">
+                    <img id="logo" src="assets/images/fridgecheflogo.png">
+                </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-image" id="jumbotron">
+                        <img src="assets/images/jumbotronImage.jpg">
+                        <span class="card-title" id="mainTitle">What I cook in a Day<p>Find your Recipe</p></span>
 
-                <!-- Jumbotron -->
-                <div class="jumbotron text-center" style="background-image: url(assets/images/jumbotronImage.jpg); background-size: 100%;">
-                    <h1 class="text-center">What I cook in a Day</h1>
-                    <p class="text-center">Find a Recipe</p>
+                    </div>
                 </div>
-
-
             </div>
         </div>
 

@@ -4,16 +4,19 @@
    margin-bottom: 30px;
 }
 
-img {
-   width: 150px;
-   vertical-align: middle;
+#logo {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 25%;
+   height: auto;
+  }
+
+#jumbotron img {
+   border-radius: 25px;
 }
 
-.jumbotron {
-   margin-top: 10px;
-}
-
-.jumbotron h1 {
+#mainTitle {
    font-size: 90px;
    color: white;
    font-family: 'Amatic SC', cursive;
@@ -21,8 +24,8 @@ img {
    text-shadow: 3px 3px grey;
 }
 
-.jumbotron p {
-   margin-bottom: 150px;
+#mainTitle p {
+   margin-bottom: 50px;
    font-size: 70px;
    color: white;
    font-family: 'Amatic SC', cursive;
