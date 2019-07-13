@@ -2,13 +2,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="assets/reset.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link rel="stylesheet" type="text/css" href="assets/style.css">
 <html>
 <head>
-    <title>Fridge Chef - Page (?)</title>
+    <title>Fridge Chef - Page 2</title>
 </head>
 <body>
 
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <img src="assets/fridgecheficon.png" alt="logo">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 l2">
+            <div id="ingredients">
+                <!-- Ingredients from selected food group will append here -->
+            </div>
+        </div>
+        <div class="col s12 l6">
+            <!-- This is the fridge image that will have clickable areas to select food groups -->
+            <img src="#" alt="fridgeImage">
+        </div>
+        <div class="col s12 l4">
+            <div id="selectedIngredients">
+                <h2>Selected:</h2>
+                <!-- Ingredients that have already been selected will append here -->
+            </div>
+        </div>
+    </div>
+
+
+    </div> <!-- Closing container div --> 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script src="assets/fridgechef.js"></script>
 
