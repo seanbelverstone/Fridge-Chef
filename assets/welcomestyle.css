@@ -1,5 +1,11 @@
 #logo {
     text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: auto;
+    
 }
 
 .jumbotron {
@@ -12,5 +18,14 @@
     bottom:0;
     width:100%;
     margin:0;
+    height: 20%;
     
+}
+
+#fridgePic {
+    text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
 }
