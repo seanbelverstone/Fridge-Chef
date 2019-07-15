@@ -15,32 +15,40 @@ var condimentClicked = 0;
 var fruitVegClicked = 0;
 var ingredientFoodGroup;
 
+
+
+
+
 //Global function to be placed in each food group click event
 function showArray() {
 
-
-    //if protein selected make var ingredientFoodGroup = ingredients.proteinsArray[i] 
-    if (proteinClicked = 1) {
-        ingredientFoodGroup = ingredients.proteinsArray[i];
-    } 
-
+//if protein selected make var ingredientFoodGroup = ingredients.proteinsArray[i] 
+if (proteinClicked === 1) {
+    ingredientFoodGroup = ingredients.proteinsArray[i];
+    console.log("This detects that Protein has been clicked!");
+    console.log(ingredientFoodGroup);
+} else 
     //if dairy selected make var ingredientFoodGroup = ingredients.dairyArray[i] 
-    if (dairyClicked = 1) {
-        ingredientFoodGroup = ingredients.proteinsArray[i];
-    } 
+    if (dairyClicked === 1) {
+        ingredientFoodGroup = ingredients.dairyArray[i];
+        console.log("This detects that Dairy has been clicked!");
+    } else 
+        //if grains selected make var ingredientFoodGroup = ingredients.grainsArray[i] 
+        if (grainClicked === 1) {
+            ingredientFoodGroup = ingredients.grainsArray[i];
+            console.log("This detects that Grains has been clicked!");
+        } else
+            //if condiments selected make var ingredientFoodGroup = ingredients.condimentsArray[i] 
+            if (condimentClicked === 1) {
+                ingredientFoodGroup = ingredients.condimentsArray[i];
+                console.log("This detects that Condiments has been clicked!");
+            } else 
+                //if fruitVeg selected make var ingredientFoodGroup = ingredients.fruitAndVegArray[i] 
+                if (fruitVegClicked === 1) {
+                    ingredientFoodGroup = ingredients.fruitAndVegArray[i];
+                    console.log("This detects that Fruit and Veg has been clicked!");
 
-    //if grains selected make var ingredientFoodGroup = ingredients.grainsArray[i] 
-    if (grainClicked = 1) {
-        ingredientFoodGroup = ingredients.proteinsArray[i];
-    } 
-
-    //if grains selected make var ingredientFoodGroup = ingredients.grainsArray[i] 
-    if (grainClicked = 1) {
-        ingredientFoodGroup = ingredients.proteinsArray[i];
-    } 
-
-
-
+                } 
 
     //For loop that runs through the array corresponding with the food group.
     for (var i = 0; i < Array.length; i++) {
@@ -49,7 +57,8 @@ function showArray() {
         var input = $("<input>").attr("type", "checkbox");
         checkbox.append(input);
         var ingredientText = $("<span>");
-        checkbox.append(ingredientText)/*.text(ingredientFoodGroup) */;
+        ingredientText.text(ingredientFoodGroup);
+        checkbox.append(ingredientText);
         $("#ingredientSection").append(checkbox);
     }
 }
@@ -69,6 +78,7 @@ $("#protein").on("click", function() {
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
     showArray();
+    console.log(ingredientFoodGroup);
 })
 
 //Grains click function
