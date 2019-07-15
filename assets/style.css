@@ -1,3 +1,5 @@
+/* Welcome Page Styling */
+
 #logo {
     display: block;
     margin-left: auto;
@@ -9,6 +11,12 @@
 .jumbotron {
     padding:1rem 2rem;
     text-align:center;
+}
+
+#fridgePic {
+    text-align:center;
+    margin-left:43%;
+    margin-right:48%;
 }
 
 #bottombar {

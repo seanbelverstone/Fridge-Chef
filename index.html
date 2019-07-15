@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/welcomestyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
@@ -68,7 +68,7 @@
 
                 // Check if the variable state is equal to 'closed'
                 if (state === "closed") {
-                    fridge.animate({ height: "300px", width: "345px" });
+                    fridge.animate({ width: "345px" }); // height: "300px",
                     // update the src attribute of this image to it's open value
                     $(this).attr("src", $(this).attr("openSrc"));
                     console.log($(this).attr("openSrc"));
@@ -76,7 +76,7 @@
                     $(this).attr("data-state", "open");
                     // If state is equal to 'animate'... 
                 } else {
-                    fridge.animate({ height: "225px", width: "135px" });
+                    fridge.animate({ width: "135px" }); // height: "225px",
                     // update the src attribute of this image to it's closed value
                     $(this).attr("src", $(this).attr("closed"));
                     // update the data-state attribute to 'closed'
