@@ -16,50 +16,81 @@ var fruitVegClicked = 0;
 var ingredientFoodGroup;
 
 
+// SCOTT: I had the bright idea of trying to turn the ingredients.proteinsArray.length from the for-loop, into a variable that we could pass into a function, somehow. This is leftover code from that.
+// function ingredientDisplayer {
+//     console.log("stuff");
+// }
 
 
 
 //Global function to be placed in each food group click event
 function showArray() {
 
-//if protein selected make var ingredientFoodGroup = ingredients.proteinsArray[i] 
-if (proteinClicked === 1) {
-    ingredientFoodGroup = ingredients.proteinsArray[i];
-    console.log("This detects that Protein has been clicked!");
-    console.log(ingredientFoodGroup);
-} else 
-    //if dairy selected make var ingredientFoodGroup = ingredients.dairyArray[i] 
-    if (dairyClicked === 1) {
-        ingredientFoodGroup = ingredients.dairyArray[i];
-        console.log("This detects that Dairy has been clicked!");
-    } else 
-        //if grains selected make var ingredientFoodGroup = ingredients.grainsArray[i] 
-        if (grainClicked === 1) {
-            ingredientFoodGroup = ingredients.grainsArray[i];
-            console.log("This detects that Grains has been clicked!");
-        } else
-            //if condiments selected make var ingredientFoodGroup = ingredients.condimentsArray[i] 
-            if (condimentClicked === 1) {
-                ingredientFoodGroup = ingredients.condimentsArray[i];
-                console.log("This detects that Condiments has been clicked!");
-            } else 
-                //if fruitVeg selected make var ingredientFoodGroup = ingredients.fruitAndVegArray[i] 
-                if (fruitVegClicked === 1) {
-                    ingredientFoodGroup = ingredients.fruitAndVegArray[i];
-                    console.log("This detects that Fruit and Veg has been clicked!");
 
-                } 
 
     //For loop that runs through the array corresponding with the food group.
-    for (var i = 0; i < Array.length; i++) {
+    for (var i = 0; i < ingredients.proteinsArray.length; i++) { //SCOTT: ideally, we want to replace "ingredients.proteinsArray.length" with "whatever array is contained in ingredientFoodGroup".length.
+    // SCOTT: I just have no idea how to do that....
         
+        // SCOTT: This creates our checkboxes, as clickable morphing things, for each item.
         var checkbox = $("<label>");
         var input = $("<input>").attr("type", "checkbox");
         checkbox.append(input);
+
+
+
+
+        // SCOTT: This adds the text onto each Checkbox that is created.
         var ingredientText = $("<span>");
-        ingredientText.text(ingredientFoodGroup);
-        checkbox.append(ingredientText);
+        ingredientText.text(ingredientFoodGroup); // SCOTT: Setting the text equal to the.......something.
+        checkbox.append(ingredientText); // SCOTT: Appending the text onto the checkbox.
+
+        // SCOTT: Getting things to display vertically! This inserts both a Line Break, and the entire Checkbox+Text object we created, onto the webpage.
+        // SCOTT: This repeats for each item in the array.
+        $("#ingredientSection").append("<br>");
         $("#ingredientSection").append(checkbox);
+
+
+
+
+
+
+    //if protein selected make var ingredientFoodGroup = ingredients.proteinsArray[i] 
+    if (proteinClicked = 1) {
+        ingredientFoodGroup = ingredients.proteinsArray[i];
+        console.log("This detects that Protein has been clicked!");
+        console.log(ingredientFoodGroup);
+    } else
+        //if dairy selected make var ingredientFoodGroup = ingredients.dairyArray[i] 
+        if (dairyClicked = 1) {
+            ingredientFoodGroup = ingredients.dairyArray[i];
+            console.log("This detects that Dairy has been clicked!");
+            console.log(ingredientFoodGroup);
+        } else 
+            //if grains selected make var ingredientFoodGroup = ingredients.grainsArray[i] 
+            if (grainClicked = 1) {
+                ingredientFoodGroup = ingredients.grainsArray[i];
+                console.log("This detects that Grains has been clicked!");
+                console.log(ingredientFoodGroup);
+            } else
+                //if condiments selected make var ingredientFoodGroup = ingredients.condimentsArray[i] 
+                if (condimentClicked = 1) {
+                    ingredientFoodGroup = ingredients.condimentsArray[i];
+                    console.log("This detects that Condiments has been clicked!");
+                    console.log(ingredientFoodGroup);
+                } else 
+                    //if fruitVeg selected make var ingredientFoodGroup = ingredients.fruitAndVegArray[i] 
+                    if (fruitVegClicked === 1) {
+                        ingredientFoodGroup = ingredients.fruitAndVegArray[i];
+                        console.log("This detects that Fruit and Veg has been clicked!");
+                        console.log(ingredientFoodGroup);
+
+                    } 
+
+
+
+
+
     }
 }
 
@@ -78,7 +109,7 @@ $("#protein").on("click", function() {
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
     showArray();
-    console.log(ingredientFoodGroup);
+    // console.log(ingredientFoodGroup);  // SCOTT: Not sure this is necessary anymore.
 })
 
 //Grains click function
