@@ -43,6 +43,10 @@
 
 /*Ingredients page styling*/
 
+#selectedIngredients {
+   margin-left: 100px;
+}
+
 #fridgeContainer {
    position: relative;
 }
@@ -50,6 +54,7 @@
 #fridge {
    width: 130%;
    height: auto;
+   margin-left: 15px;
 }
 
 #protein {
@@ -57,7 +62,7 @@
    height: auto;
    position: absolute;
    bottom: 34%;
-   left: 22%;
+   left: 25%;
 }
 
 #fruitAndVeg {
@@ -65,7 +70,7 @@
    height: auto;
    position: absolute;
    bottom: 16%;
-   left: 50%;
+   left: 55%;
 }
 
 #grains {
@@ -73,7 +78,7 @@
    height: auto;
    position: absolute;
    bottom: 19%;
-   left: 17%;
+   left: 20%;
 }
 
 #dairy {
@@ -81,7 +86,7 @@
    height: auto;
    position: absolute;
    bottom: 62%;
-   left: 17%;
+   left: 20%;
 }
 
 #condiments {
@@ -89,49 +94,9 @@
    height: auto;
    position: absolute;
    bottom: 63%;
-   left: 61%;
+   left: 65%;
 }
 
 #selectedIngredients {
    text-align: right;
-}
-
-/* page 3 style.css */
-#pageHead {
-   margin:0 auto;
-   margin-top: 40px;
-   margin-bottom: 30px;
-}
-
-#logo {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   width: 25%;
-   height: auto;
-  }
-
-#jumbotron img {
-   border-radius: 25px;
-}
-
-.card {
-   box-shadow: none;
-}
-
-#mainTitle {
-   font-size: 90px;
-   color: white;
-   font-family: 'Amatic SC', cursive;
-   font-weight: bolder;
-   text-shadow: 3px 3px grey;
-   margin-left: 20px;
-}
-
-#mainTitle p {
-   margin-bottom: 30px;
-   font-size: 70px;
-   color: white;
-   font-family: 'Amatic SC', cursive;
-   text-shadow: 2px 2px grey;
 }
