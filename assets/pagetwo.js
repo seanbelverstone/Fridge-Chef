@@ -1,8 +1,14 @@
-var proteinsArray = [''];
-var grainsArray = [''];
-var fruitAndVegArray = [''];
-var dairyArray = [''];
-var condimentsArray = [''];
+var proteinsArray = ['Bacon', 'Beef', 'Pork', 'Chicken', 'Lamb Meat', 'Fish', 'Shrimp', 'Turkey'];
+var grainsArray = ['Rice', 'Brown Rice', 'Wheat', 'Oat', 'Quinoa', 'Pasta', 'Almonds', 'Walnuts'];
+var fruitAndVegArray = ['Lemons', 'Limes', 'Apple', 'Tomato', 'Celery', 'Leek', 'Onion', 'Potato', 'Blueberries', 'Strawberries', 'Banana', 'Cabbage', 'Lettuce', 'Mushrooms', 'Avocado', 'Carrots', 'Bell Peppers', 'Broccoli', 'Cucumber', 'Jalapeño', 'Garlic'];
+var dairyArray = ['Milk', 'Cheese', 'Yoghurt', 'Heavy Cream', 'Butter', 'Eggs'];
+var condimentsArray = ['Mustard', 'Mayo', 'Ketchup', 'Olive Oil', 'Vinegar', 'Balsamic', 'Honey', 'Soy Sauce', 'Sesame Oil'];
+
+
+
+$("#fridge").on("click", function() {
+
+})
 
 $("#protein").on("click", function() {
 
