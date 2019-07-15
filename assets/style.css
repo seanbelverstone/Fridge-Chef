@@ -43,6 +43,10 @@
 
 /*Ingredients page styling*/
 
+#selectedIngredients {
+    margin-left: 100px;
+}
+
 #fridgeContainer {
     position: relative;
 }
@@ -50,6 +54,7 @@
 #fridge {
     width: 130%;
     height: auto;
+    margin-left: 15px;
 }
 
 #protein {
@@ -57,7 +62,7 @@
     height: auto;
     position: absolute;
     bottom: 34%;
-    left: 22%;
+    left: 25%;
 }
 
 #fruitAndVeg {
@@ -65,7 +70,7 @@
     height: auto;
     position: absolute;
     bottom: 16%;
-    left: 50%;
+    left: 55%;
 }
 
 #grains {
@@ -73,7 +78,7 @@
     height: auto;
     position: absolute;
     bottom: 19%;
-    left: 17%;
+    left: 20%;
 }
 
 #dairy {
@@ -81,7 +86,7 @@
     height: auto;
     position: absolute;
     bottom: 62%;
-    left: 17%;
+    left: 20%;
 }
 
 #condiments {
@@ -89,7 +94,7 @@
     height: auto;
     position: absolute;
     bottom: 63%;
-    left: 61%;
+    left: 65%;
 }
 
 #selectedIngredients {
