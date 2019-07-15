@@ -38,16 +38,16 @@
         </div>
     </header>
 
-    <input type="image" src="assets/images/fridgeclosed.png" data-state="closed" closed="assets/images/fridgeclosed.png" openSrc="assets/images/fridgeopen.png" width="135" height="225" name="saveForm" class="btTxt submit" id="fridgePic" />
+    <input type="image" src="assets/images/fridgeclosed.png" data-state="closed" closed="assets/images/fridgeclosed.png" openSrc="assets/images/fridgeopen.png" name="saveForm" class="btTxt submit" id="fridgePic" />
 
 <!-- FridgeClosed: 135x225-->
 
 <!-- FridgeOpen = 267x222 -->
 
     <footer>
-        <div class="jumbotron" id="bottombar">
+        <!-- <div class="jumbotron" id="bottombar"> -->
             <!-- <a class="btn btn-primary btn-lg" href="#" role="button">GET STARTED</a> -->
-        </div>
+        <!-- </div> -->
     </footer>
 
     <script>
@@ -68,7 +68,7 @@
 
                 // Check if the variable state is equal to 'closed'
                 if (state === "closed") {
-                    fridge.animate({ width: "345px" }); // height: "300px",
+                    fridge.animate({ width: "35%" }); // height: "300px",
                     // update the src attribute of this image to it's open value
                     $(this).attr("src", $(this).attr("openSrc"));
                     console.log($(this).attr("openSrc"));
@@ -76,7 +76,7 @@
                     $(this).attr("data-state", "open");
                     // If state is equal to 'animate'... 
                 } else {
-                    fridge.animate({ width: "135px" }); // height: "225px",
+                    fridge.animate({ width: "18%" }); // height: "225px",
                     // update the src attribute of this image to it's closed value
                     $(this).attr("src", $(this).attr("closed"));
                     // update the data-state attribute to 'closed'
