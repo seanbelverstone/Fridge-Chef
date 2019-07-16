@@ -1,0 +1,102 @@
+/* Welcome Page Styling */
+
+#logo {
+   text-align:center;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 150px;
+   height: 150px;
+   height: auto;
+   
+}
+
+.jumbotron {
+   padding:1rem 2rem;
+   text-align:center;
+}
+
+#fridgePic {
+   text-align:center;
+   margin-left:43%;
+   margin-right:48%;
+   width:18%;
+   height:auto;
+}
+
+#bottombar {
+   position: fixed;
+   bottom:0;
+   width:100%;
+   margin:0;
+   height: 20%;
+   
+}
+
+#fridgePic {
+   text-align:center;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   height: auto;
+}
+
+/*Ingredients page styling*/
+
+#selectedIngredients {
+   margin-left: 100px;
+}
+
+#fridgeContainer {
+   position: relative;
+}
+
+#fridge {
+   width: 130%;
+   height: auto;
+   margin-left: 15px;
+}
+
+#protein {
+   width: 50%;
+   height: auto;
+   position: absolute;
+   bottom: 34%;
+   left: 25%;
+}
+
+#fruitAndVeg {
+   width: 26%;
+   height: auto;
+   position: absolute;
+   bottom: 16%;
+   left: 55%;
+}
+
+#grains {
+   width: 20%;
+   height: auto;
+   position: absolute;
+   bottom: 19%;
+   left: 20%;
+}
+
+#dairy {
+   width: 15%;
+   height: auto;
+   position: absolute;
+   bottom: 62%;
+   left: 20%;
+}
+
+#condiments {
+   width: 20%;
+   height: auto;
+   position: absolute;
+   bottom: 63%;
+   left: 65%;
+}
+
+#selectedIngredients {
+   text-align: right;
+}
