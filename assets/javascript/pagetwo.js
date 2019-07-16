@@ -4,9 +4,11 @@ var ingredients = {
     proteinsArray: ['Bacon', 'Beef', 'Chicken', 'Fish', 'Pork',  'Lamb',  'Shrimp', 'Turkey'],
     grainsArray: ['Almonds', 'Brown Rice', 'Oat', 'Pasta', 'Quinoa', 'Rice', 'Walnuts', 'Wheat'],
     fruitAndVegArray: ['Lemons', 'Limes', 'Apple', 'Tomato', 'Celery', 'Leek', 'Onion', 'Potato', 'Blueberries', 'Strawberries', 'Grapes', 'Banana', 'Cabbage', 'Lettuce', 'Mushrooms', 'Avocado', 'Carrots', 'Bell Peppers', 'Broccoli', 'Cucumber', 'Jalapeño', 'Garlic'],
-    dairyArray: ['Milk', 'Cheese', 'Yoghurt', 'Heavy Cream', 'Butter', 'Eggs'],
+    dairyArray: ['Milk', 'Cheese', 'Yoghurt', 'Cream', 'Butter', 'Eggs'],
     condimentsArray: ['Mustard', 'Mayo', 'Ketchup', 'Olive Oil', 'Vinegar', 'Balsamic', 'Honey', 'Soy Sauce', 'Sesame Oil']
 }
+
+var selectedIngredients = [];
 
 var proteinClicked = 0;
 var dairyClicked = 0;
@@ -14,6 +16,8 @@ var grainClicked = 0;
 var condimentClicked = 0;
 var fruitVegClicked = 0;
 var ingredientFoodGroup;
+
+
 
 
 //Global function to be placed in each food group click event
@@ -26,8 +30,13 @@ function showArray(ingredientsList) {
         
         // SCOTT: This creates our checkboxes, as clickable morphing things, for each item.
         var checkbox = $("<label>");
+        checkbox.attr("for", ingredientsList[i]);
         var input = $("<input>").attr("type", "checkbox");
+        input.addClass("checkBox");
+        input.attr("id", ingredientsList[i].replace(" ", "-"));
+        input.attr("name", ingredientsList[i].replace(" ", "-"));
         checkbox.append(input);
+        
 
 
 
@@ -35,6 +44,8 @@ function showArray(ingredientsList) {
         // SCOTT: This adds the text onto each Checkbox that is created.
         var ingredientText = $("<span>");
         ingredientText.text(ingredientsList[i]); // SCOTT: Setting the text equal to each item in the ingredientsList variable. The ingredientsList variable now contains the contents of the precise ingredient array that we want (which we defined at the time that the showArray function was run)
+
+        ingredientText.addClass("checkBox");    
 
 
         checkbox.append(ingredientText); // SCOTT: Appending the text onto the checkbox.
@@ -46,52 +57,31 @@ function showArray(ingredientsList) {
 
 
 
-
-
-// ===============================================
-
-// SCOTT: We don't need this anymore! Because we're already setting the array that we want, at the time that the showArray function is being run.
-
-// ===============================================
-
-    // //if protein selected make var ingredientFoodGroup = ingredients.proteinsArray[i] 
-    // if (proteinClicked = 1) {
-    //     ingredientFoodGroup = ingredients.proteinsArray[i];
-    //     console.log("This detects that Protein has been clicked!");
-    //     console.log(ingredientFoodGroup);
-    // } else
-    //     //if dairy selected make var ingredientFoodGroup = ingredients.dairyArray[i] 
-    //     if (dairyClicked = 1) {
-    //         ingredientFoodGroup = ingredients.dairyArray[i];
-    //         console.log("This detects that Dairy has been clicked!");
-    //         console.log(ingredientFoodGroup);
-    //     } else 
-    //         //if grains selected make var ingredientFoodGroup = ingredients.grainsArray[i] 
-    //         if (grainClicked = 1) {
-    //             ingredientFoodGroup = ingredients.grainsArray[i];
-    //             console.log("This detects that Grains has been clicked!");
-    //             console.log(ingredientFoodGroup);
-    //         } else
-    //             //if condiments selected make var ingredientFoodGroup = ingredients.condimentsArray[i] 
-    //             if (condimentClicked = 1) {
-    //                 ingredientFoodGroup = ingredients.condimentsArray[i];
-    //                 console.log("This detects that Condiments has been clicked!");
-    //                 console.log(ingredientFoodGroup);
-    //             } else 
-    //                 //if fruitVeg selected make var ingredientFoodGroup = ingredients.fruitAndVegArray[i] 
-    //                 if (fruitVegClicked === 1) {
-    //                     ingredientFoodGroup = ingredients.fruitAndVegArray[i];
-    //                     console.log("This detects that Fruit and Veg has been clicked!");
-    //                     console.log(ingredientFoodGroup);
-
-    //                 } 
-
-// ===============================================
-
-
-
     }
 }
+
+
+
+
+
+//SCOTT: Next, we need to create on-click events for each Checkbox that is created. Ideally, we need something that checks, IF this checkbox is checked, THEN we put the contents of that checkbox onto the "Your Selected Stuff" div. Then if the checkbox is UNchecked, we REMOVE that checkbox from the "Your Selected Stuff" div.
+
+// SCOTT: This should be a click sensor, and it should spit the text of its checkbox, into the SELECTED section of the webpage.
+$(document).on("click", ".checkBox", function() { 
+    console.log("We clicked a checkbox!");
+    console.log($(this).attr("name"));
+});
+
+
+// $(".checkBox").on("click", function(event) {
+//     
+// });
+
+
+
+// $('#Milk').prop("checked")
+
+
 
 //Protein click function
 $("#protein").on("click", function() {
