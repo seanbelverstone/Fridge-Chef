@@ -45,8 +45,11 @@ body {
     float:left;
     align-content: center;
     margin-top: 20px;
-
-
 }
+
+button {
+    text-align: center;
+}
+
 
 @media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }}
