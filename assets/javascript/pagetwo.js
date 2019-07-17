@@ -125,6 +125,26 @@ $(document).on("click", ".checkBox", function() {
             //     selectedIngredients = frontHalf.concat(backHalf);
             // }
 
+       var indexOfIngredient = selectedIngredients.indexOf(selectedText);
+       
+            if (indexOfIngredient === 0) {
+                //uses pop because you're only getting rid of the first element
+                selectedIngredients.pop(selectedText);
+                console.log("We are trying to get rid of the first element.");
+            } else {
+                console.log("index Of selected" + selectedText)
+                var backHalf = selectedIngredients.slice(indexOfIngredient + 1);
+
+                console.log("backhalf:" + backHalf);
+                console.log("selectedIng:" + selectedIngredients);
+                var frontHalf = selectedIngredients.slice(0, indexOfIngredient);
+                //SEAN: Merges the array
+                
+                console.log("backhalf:" + backHalf);
+                console.log("selectedIng:" + selectedIngredients);
+                selectedIngredients = frontHalf.concat(backHalf);
+       
+
         selectedIngredientsRefresh();
     }
 });
