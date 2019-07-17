@@ -11,6 +11,8 @@
    
 }
 
+
+
 .jumbotron {
    padding:1rem 2rem;
    text-align:center;
@@ -63,6 +65,10 @@
    position: absolute;
    bottom: 34%;
    left: 25%;
+}
+
+span {
+   font-family: 'Indie Flower', cursive;
 }
 
 #protein:hover {
