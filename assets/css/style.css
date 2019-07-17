@@ -65,12 +65,24 @@
    left: 25%;
 }
 
+#protein:hover {
+   transition: .5s ease;
+   width: 55%;
+   opacity: 0.9;
+}
+
 #fruitAndVeg {
    width: 26%;
    height: auto;
    position: absolute;
    bottom: 16%;
    left: 55%;
+}
+
+#fruitAndVeg:hover {
+   transition: .5s ease;
+   width: 31%;
+   opacity: 0.9;
 }
 
 #grains {
@@ -81,6 +93,12 @@
    left: 20%;
 }
 
+#grains:hover {
+   transition: .5s ease;
+   width: 25%;
+   opacity: 0.9;
+}
+
 #dairy {
    width: 15%;
    height: auto;
@@ -89,12 +107,24 @@
    left: 20%;
 }
 
+#dairy:hover {
+   transition: .5s ease;
+   width: 20%;
+   opacity: 0.9;
+}
+
 #condiments {
    width: 20%;
    height: auto;
    position: absolute;
    bottom: 63%;
    left: 65%;
+}
+
+#condiments:hover {
+   transition: .5s ease;
+   width: 25%;
+   opacity: 0.9;
 }
 
 #selectedIngredients {
