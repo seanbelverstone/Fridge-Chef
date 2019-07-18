@@ -1,4 +1,10 @@
 /* Welcome Page Styling */
+#heading {
+   background-color: rgb(77, 140, 254);
+   width: 100%;
+   height: 150px;
+   margin-bottom: 100px;
+}
 
 #logo {
    text-align:center;
@@ -7,8 +13,7 @@
    margin-right: auto;
    width: 150px;
    height: 150px;
-   height: auto;
-   
+   height: auto;   
 }
 
 .jumbotron {
@@ -43,6 +48,10 @@
 
 /*Ingredients page styling*/
 
+#selectedIngredients {
+   margin-left: 100px;
+}
+
 #fridgeContainer {
    position: relative;
 }
@@ -50,6 +59,7 @@
 #fridge {
    width: 130%;
    height: auto;
+   margin-left: 15px;
 }
 
 #protein {
@@ -57,7 +67,17 @@
    height: auto;
    position: absolute;
    bottom: 34%;
-   left: 22%;
+   left: 25%;
+}
+
+span {
+   font-family: 'Indie Flower', cursive;
+}
+
+#protein:hover {
+   transition: .5s ease;
+   width: 55%;
+   opacity: 0.9;
 }
 
 #fruitAndVeg {
@@ -65,7 +85,13 @@
    height: auto;
    position: absolute;
    bottom: 16%;
-   left: 50%;
+   left: 55%;
+}
+
+#fruitAndVeg:hover {
+   transition: .5s ease;
+   width: 31%;
+   opacity: 0.9;
 }
 
 #grains {
@@ -73,7 +99,13 @@
    height: auto;
    position: absolute;
    bottom: 19%;
-   left: 17%;
+   left: 20%;
+}
+
+#grains:hover {
+   transition: .5s ease;
+   width: 25%;
+   opacity: 0.9;
 }
 
 #dairy {
@@ -81,7 +113,13 @@
    height: auto;
    position: absolute;
    bottom: 62%;
-   left: 17%;
+   left: 20%;
+}
+
+#dairy:hover {
+   transition: .5s ease;
+   width: 20%;
+   opacity: 0.9;
 }
 
 #condiments {
@@ -89,31 +127,15 @@
    height: auto;
    position: absolute;
    bottom: 63%;
-   left: 61%;
+   left: 65%;
 }
 
-#selectedIngredients {
-   text-align: right;
-}
-
-/* page 3 style.css */
-#pageHead {
-   margin:0 auto;
-   margin-top: 40px;
-   margin-bottom: 30px;
-}
-
-#logo {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
+#condiments:hover {
+   transition: .5s ease;
    width: 25%;
-   height: auto;
-  }
-
-#jumbotron img {
-   border-radius: 25px;
+   opacity: 0.9;
 }
+
 
 /* .card {
    box-shadow: none !important;
@@ -163,4 +185,13 @@ height: 400px;
    #mainTitle p {
       font-size: 50px;
    }
+  
+#selectedIngredients {
+   text-align: right;
+}
+
+#submit {
+   margin-right: 50%;
+   margin-left: 50%;
+
 }
