@@ -133,16 +133,21 @@ $("#protein").on("click", function() {
     condimentClicked = 0;
     fruitVegClicked = 0;
 
+    // SCOTT: Empties out the image div so only one shows at a time.
+    $("#foodGroupImage").empty();
+
     //changes text in the h4 element
     $("#foodGroupTitle").text("Proteins");
 
-    $("<img/>").prependTo("#foodGroupTitle").attr({
+    // SCOTT: Prepends a little icon image above the ingredient category.
+    $("<img/>").prependTo("#foodGroupImage").attr({
         src: 'assets/images/meaticon.png',
         alt: '',
-        width: '60px'
+        height: '60px'
     });
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
+    
     showArray(ingredients.proteinsArray); // SCOTT: Here we are running the showArray function, but inserting the EXACT ARRAY that we want to run it on. We're already precisely defining what we want showArray to apply to, at the time that we're running the function.
 });
 
@@ -156,14 +161,16 @@ $("#grains").on("click", function() {
     condimentClicked = 0;
     fruitVegClicked = 0;
 
+    // SCOTT: Empties out the image div so only one shows at a time.
+    $("#foodGroupImage").empty();
+
     //Changes text in the h4 element
     $("#foodGroupTitle").text("Grains");
     
-    $("#foodGroupTitle").prependTo("<br>" );
-    $("<img/>").prependTo("#foodGroupTitle").attr({
+    $("<img/>").prependTo("#foodGroupImage").attr({
         src: 'assets/images/grains.png',
         alt: '',
-        width: '60px'
+        height: '60px'
     });
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
@@ -180,13 +187,16 @@ $("#fruitAndVeg").on("click", function() {
     condimentClicked = 0;
     fruitVegClicked = 1;
 
+    // SCOTT: Empties out the image div so only one shows at a time.
+    $("#foodGroupImage").empty();
+
     //changes text in the h4 element
     $("#foodGroupTitle").text("Fruit and Veg");
 
-    $("<img/>").prependTo("#foodGroupTitle").attr({
+    $("<img/>").prependTo("#foodGroupImage").attr({
         src: 'assets/images/fruitvegpic.png',
         alt: '',
-        width: '60px'
+        height: '60px'
     });
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
@@ -203,13 +213,16 @@ $("#dairy").on("click", function() {
     condimentClicked = 0;
     fruitVegClicked = 0;
 
+    // SCOTT: Empties out the image div so only one shows at a time.
+    $("#foodGroupImage").empty();
+
     //changes text in the h4 element
     $("#foodGroupTitle").text("Dairy");
 
-    $("<img/>").prependTo("#foodGroupTitle").attr({
+    $("<img/>").prependTo("#foodGroupImage").attr({
         src: 'assets/images/dairyicon.png',
         alt: '',
-        width: '60px'
+        height: '60px'
     });
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
@@ -226,9 +239,69 @@ $("#condiments").on("click", function() {
     condimentClicked = 1;
     fruitVegClicked = 0;
     
+    // SCOTT: Empties out the image div so only one shows at a time.
+    $("#foodGroupImage").empty();
+    
     //changes text in the h4 element
     $("#foodGroupTitle").text("Condiments");
+
+    $("<img/>").prependTo("#foodGroupImage").attr({
+        src: 'assets/images/condiments.png',
+        alt: '',
+        height: '60px'
+    });
+
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
     showArray(ingredients.condimentsArray); // SCOTT: Here we are running the showArray function, but inserting the EXACT ARRAY that we want to run it on. We're already precisely defining what we want showArray to apply to, at the time that we're running the function.
 });
+
+
+
+
+$("#submit").on("click", function(event) {
+    // Check if SelectedIngredients is empty.
+    // IF EMPTY:
+
+        if (selectedIngredients.length === 0) {
+            // Toast: "Hey! Go add some ingredients!"
+            M.toast({html: 'Hey! Go add some ingredients!'});
+            // Stop user from navigating away.
+            event.preventDefault();
+        } 
+        // OTHERWISE:
+        else {
+            // Take selectedIngredients and put it into LocalStorage
+            localStorage.setItem("ingredients", selectedIngredients);
+            console.log(selectedIngredients);
+        }
+
+});
+
+
+
+
+
+//------------------------- DONT NEED THIS --------------------------------------------------------------
+
+
+//     // Output all of the new information into the relevant HTML sections
+
+//     showAllStuff();
+//   });
+
+
+//   function showAllStuff() {
+//   $("#name-display").text("");
+//   $("#name-display").text(localStorage.getItem("name"));
+
+//   $("#email-display").text("");
+//   $("#email-display").text("Email: " + localStorage.getItem("email"));
+
+//   $("#age-display").text("");
+//   $("#age-display").text("Age: " + localStorage.getItem("age"));
+
+//   $("#comment-display").text("");
+//   $("#comment-display").text("Comment: " + localStorage.getItem("comment"));
+// }
+// showAllStuff();
