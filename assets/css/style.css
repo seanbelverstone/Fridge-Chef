@@ -145,8 +145,6 @@ span {
    margin-left: 50%;
 }
 
-
-/* Test merge */
 /* Page three CSS */
 
 /* .card {
@@ -178,9 +176,9 @@ span {
 height: 400px;
 }
 
-.recipe-card {
-   /* border: solid 2px black; */
-}
+/* .recipe-card {
+   border: solid 2px black;
+} */
 
 .card-content {
    height: 100px;
