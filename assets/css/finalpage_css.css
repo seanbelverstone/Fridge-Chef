@@ -52,5 +52,17 @@ button {
     display: inline-block;
 }
 
+.iframe-container{
+    position: relative;
+    height: 0;
+    float: left;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+}
 
 @media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }}
