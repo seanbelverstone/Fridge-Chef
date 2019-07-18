@@ -1,12 +1,14 @@
 // Initial Arrays for Page Two
 
 var ingredients = {
-    proteinsArray: ['Bacon', 'Beef', 'Chicken', 'Fish', 'Pork',  'Lamb',  'Shrimp', 'Turkey'],
+    proteinsArray: ['Bacon', 'Beef', 'Chicken', 'Fish', 'Lamb', 'Pork', 'Shrimp', 'Turkey'],
     grainsArray: ['Almonds', 'Brown Rice', 'Oat', 'Pasta', 'Quinoa', 'Rice', 'Walnuts', 'Wheat'],
-    fruitAndVegArray: ['Lemons', 'Limes', 'Apple', 'Tomato', 'Celery', 'Leek', 'Onion', 'Potato', 'Blueberries', 'Strawberries', 'Grapes', 'Banana', 'Cabbage', 'Lettuce', 'Mushrooms', 'Avocado', 'Carrots', 'Bell Peppers', 'Broccoli', 'Cucumber', 'Jalapeño', 'Garlic'],
-    dairyArray: ['Milk', 'Cheese', 'Yoghurt', 'Heavy Cream', 'Butter', 'Eggs'],
-    condimentsArray: ['Mustard', 'Mayo', 'Ketchup', 'Olive Oil', 'Vinegar', 'Balsamic', 'Honey', 'Soy Sauce', 'Sesame Oil']
+    fruitAndVegArray: ['Apple', 'Banana', 'Blueberries', 'Lemons', 'Tomato', 'Celery', 'Leek', 'Onion', 'Potato', 'Strawberries', 'Grapes',  'Cabbage', 'Mushrooms', 'Carrots', 'Bell Peppers', 'Broccoli', 'Cucumber'],
+    dairyArray: ['Milk', 'Cheese', 'Yogurt', 'Cream', 'Butter', 'Eggs'],
+    condimentsArray: ['Mustard', 'Mayo', 'Ketchup', 'Olive-Oil', 'Vinegar', 'Balsamic', 'Honey', 'Soy-Sauce', 'Sesame-Oil']
 }
+
+var selectedIngredients = [];
 
 var proteinClicked = 0;
 var dairyClicked = 0;
@@ -14,6 +16,8 @@ var grainClicked = 0;
 var condimentClicked = 0;
 var fruitVegClicked = 0;
 var ingredientFoodGroup;
+
+
 
 
 //Global function to be placed in each food group click event
@@ -26,17 +30,21 @@ function showArray(ingredientsList) {
         
         // SCOTT: This creates our checkboxes, as clickable morphing things, for each item.
         var checkbox = $("<label>");
+        checkbox.attr("for", ingredientsList[i]);
         var input = $("<input>").attr("type", "checkbox");
-        checkbox.append(input);
-
-
-
-
-        // SCOTT: This adds the text onto each Checkbox that is created.
+        input.addClass("checkBox");
+        input.attr("id", ingredientsList[i].replace(" ", "-"));
+        input.attr("name", ingredientsList[i].replace(" ", "-"));
+        //SEAN: checking to see if the ingredient is on the ingredients list, meaning it's already checked.
         var ingredientText = $("<span>");
         ingredientText.text(ingredientsList[i]); // SCOTT: Setting the text equal to each item in the ingredientsList variable. The ingredientsList variable now contains the contents of the precise ingredient array that we want (which we defined at the time that the showArray function was run)
 
-
+        if (selectedIngredients.indexOf(ingredientsList[i]) !== -1) {
+            console.log("hello");
+            input.prop('checked', true);
+            //need to check that the checkbox has already had it's state changed to "checked"
+        } 
+        checkbox.append(input);
         checkbox.append(ingredientText); // SCOTT: Appending the text onto the checkbox.
 
         // SCOTT: Getting things to display vertically! This inserts both a Line Break, and the entire Checkbox+Text object we created, onto the webpage.
@@ -46,52 +54,74 @@ function showArray(ingredientsList) {
 
 
 
-
-
-// ===============================================
-
-// SCOTT: We don't need this anymore! Because we're already setting the array that we want, at the time that the showArray function is being run.
-
-// ===============================================
-
-    // //if protein selected make var ingredientFoodGroup = ingredients.proteinsArray[i] 
-    // if (proteinClicked = 1) {
-    //     ingredientFoodGroup = ingredients.proteinsArray[i];
-    //     console.log("This detects that Protein has been clicked!");
-    //     console.log(ingredientFoodGroup);
-    // } else
-    //     //if dairy selected make var ingredientFoodGroup = ingredients.dairyArray[i] 
-    //     if (dairyClicked = 1) {
-    //         ingredientFoodGroup = ingredients.dairyArray[i];
-    //         console.log("This detects that Dairy has been clicked!");
-    //         console.log(ingredientFoodGroup);
-    //     } else 
-    //         //if grains selected make var ingredientFoodGroup = ingredients.grainsArray[i] 
-    //         if (grainClicked = 1) {
-    //             ingredientFoodGroup = ingredients.grainsArray[i];
-    //             console.log("This detects that Grains has been clicked!");
-    //             console.log(ingredientFoodGroup);
-    //         } else
-    //             //if condiments selected make var ingredientFoodGroup = ingredients.condimentsArray[i] 
-    //             if (condimentClicked = 1) {
-    //                 ingredientFoodGroup = ingredients.condimentsArray[i];
-    //                 console.log("This detects that Condiments has been clicked!");
-    //                 console.log(ingredientFoodGroup);
-    //             } else 
-    //                 //if fruitVeg selected make var ingredientFoodGroup = ingredients.fruitAndVegArray[i] 
-    //                 if (fruitVegClicked === 1) {
-    //                     ingredientFoodGroup = ingredients.fruitAndVegArray[i];
-    //                     console.log("This detects that Fruit and Veg has been clicked!");
-    //                     console.log(ingredientFoodGroup);
-
-    //                 } 
-
-// ===============================================
-
-
-
     }
 }
+
+
+
+
+
+//SCOTT: Next, we need to create on-click events for each Checkbox that is created. Ideally, we need something that checks, IF this checkbox is checked, THEN we put the contents of that checkbox onto the "Your Selected Stuff" div. Then if the checkbox is UNchecked, we REMOVE that checkbox from the "Your Selected Stuff" div.
+
+// SCOTT: This should be a click sensor, and it should spit the text of its checkbox, into the SELECTED section of the webpage.
+
+
+$(document).on("click", ".checkBox", function() { 
+    var selectedText = $(this).attr("name");    
+    // SCOTT: If the checkbox is UNchecked at the time the user clicks it, then DO_THIS_STUFF
+    if ($(this).prop("checked") === true) {
+
+        // console.log("We clicked a checkbox!");
+        // console.log($(this).attr("name"));
+        // SEAN: Storing the ingredient (milk/ cheese etc) into a variable
+        
+
+        console.log($(this).attr("name"));
+
+        //SEAN: pushing it to the empty array
+        selectedIngredients.push(selectedText);
+        //SEAN: Console log to check
+        console.log(selectedIngredients);
+
+
+
+        selectedIngredientsRefresh();
+
+    } else {
+       console.log("box should be unchecked");
+
+       //stores the index position of the selected text into a variable
+    //    var indexOfIngredient = selectedIngredients.indexOf(selectedText);
+
+    // Filter ! This goes through the array, comparing each ingredient against the selectedText.
+    // if it returns TRUE, it keeps going
+    // if it returns FALSE, it removes it and keeps going
+       selectedIngredients = selectedIngredients.filter(ingredient => ingredient !== selectedText)
+
+        selectedIngredientsRefresh();
+    }
+    });
+
+
+
+
+function selectedIngredientsRefresh() {
+    //SEAN: Clear the ingredients list first
+    $("#selectedIngredientsList").empty();
+    //SEAN: Display array in selectedIngredients div
+    $("#selectedIngredientsList").append("<ul>");
+    //SEAN: Need to display vertically - currently displaying horizontally
+    for (var j = 0; j < selectedIngredients.length; j++) {
+        $("#selectedIngredientsList").append("<li>" + selectedIngredients[j] + "</li>");
+    }
+};
+
+
+
+
+
+
+
 
 //Protein click function
 $("#protein").on("click", function() {
@@ -105,10 +135,16 @@ $("#protein").on("click", function() {
 
     //changes text in the h4 element
     $("#foodGroupTitle").text("Proteins");
+
+    $("<img/>").prependTo("#foodGroupTitle").attr({
+        src: 'assets/images/meaticon.png',
+        alt: '',
+        width: '60px'
+    });
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
     showArray(ingredients.proteinsArray); // SCOTT: Here we are running the showArray function, but inserting the EXACT ARRAY that we want to run it on. We're already precisely defining what we want showArray to apply to, at the time that we're running the function.
-})
+});
 
 //Grains click function
 $("#grains").on("click", function() {
@@ -122,10 +158,17 @@ $("#grains").on("click", function() {
 
     //Changes text in the h4 element
     $("#foodGroupTitle").text("Grains");
+    
+    $("#foodGroupTitle").prependTo("<br>" );
+    $("<img/>").prependTo("#foodGroupTitle").attr({
+        src: 'assets/images/grains.png',
+        alt: '',
+        width: '60px'
+    });
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
     showArray(ingredients.grainsArray); // SCOTT: Here we are running the showArray function, but inserting the EXACT ARRAY that we want to run it on. We're already precisely defining what we want showArray to apply to, at the time that we're running the function.
-})
+});
 
 //Fruit and Veg click function
 $("#fruitAndVeg").on("click", function() {
@@ -139,10 +182,16 @@ $("#fruitAndVeg").on("click", function() {
 
     //changes text in the h4 element
     $("#foodGroupTitle").text("Fruit and Veg");
+
+    $("<img/>").prependTo("#foodGroupTitle").attr({
+        src: 'assets/images/fruitvegpic.png',
+        alt: '',
+        width: '60px'
+    });
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
     showArray(ingredients.fruitAndVegArray); // SCOTT: Here we are running the showArray function, but inserting the EXACT ARRAY that we want to run it on. We're already precisely defining what we want showArray to apply to, at the time that we're running the function.
-})
+});
 
 //Dairy click function
 $("#dairy").on("click", function() {
@@ -156,10 +205,16 @@ $("#dairy").on("click", function() {
 
     //changes text in the h4 element
     $("#foodGroupTitle").text("Dairy");
+
+    $("<img/>").prependTo("#foodGroupTitle").attr({
+        src: 'assets/images/dairyicon.png',
+        alt: '',
+        width: '60px'
+    });
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
     showArray(ingredients.dairyArray); // SCOTT: Here we are running the showArray function, but inserting the EXACT ARRAY that we want to run it on. We're already precisely defining what we want showArray to apply to, at the time that we're running the function.
-})
+});
 
 //Condiments click function
 $("#condiments").on("click", function() {
@@ -176,42 +231,4 @@ $("#condiments").on("click", function() {
     //Clears the form to remove any previous checkboxes
     $("#ingredientSection").empty();
     showArray(ingredients.condimentsArray); // SCOTT: Here we are running the showArray function, but inserting the EXACT ARRAY that we want to run it on. We're already precisely defining what we want showArray to apply to, at the time that we're running the function.
-})
-
-
-
-$(document).on("click", ".submit", function() {
-    var recipeArray = [];
-
-    function recipeInfo() {
-        var recipeInfo = $(this).attr("data-recipe");
-
-        var queryURL = "https://api.edamam.com/search?q=" + recipeInfo + "&api_key=4e0c932fa1b0050f9146464e54d8f042" + "&api_id=f18cd003";
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-
-        .then(function(response) {
-
-            var results = response.data;
-
-            $("#recipe-images-here").empty();
-
-            for (var i = 0; i < results.length; i++) {
-                console.log(results[i]);
-
-                var imageDiv = $("<div>");
-                var recipeImage = $("<img>");
-
-                imageDiv.append(recipeImage);
-                recipeArray.push(results);
-
-                $("#recipe-images-here").append(imageDiv);
-            };
-
-        });
-    };
-
-})
+});
