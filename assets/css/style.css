@@ -181,6 +181,10 @@ height: 400px;
    /* border: solid 2px black; */
 }
 
+.card-content {
+   height: 100px;
+}
+
 #recipe-titles-here {
    font-weight: bolder;
    text-shadow: 3px 3px grey;

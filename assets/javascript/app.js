@@ -78,7 +78,7 @@ $(document).on("click", ".exampleSubmit", function() {
                     // adds class and id to the title div
                         // 1. card-content = materialize card format (MUST HAVE)   
                     cardContent = cardContent.attr("class", "card-content");
-                    cardContent = cardContent.text("This is a Sample");
+                    cardContent = cardContent.text("Recipe Title: " + results.recipes[i].title);
 
 
                 // FOR LINKS -------------------------
@@ -89,7 +89,7 @@ $(document).on("click", ".exampleSubmit", function() {
                     link = link.attr("class", "card-action");
 
                     // adds a clickable link
-                    var linksrc = $("<a>This is a link</a>");
+                    var linksrc = $("<a>Recipe Link</a>");
                     
                     // link source from JSON format
                     linksrc = linksrc.attr("href", results.recipes[i].source_url);
