@@ -7,17 +7,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Link Bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Link Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
     <!-- Link CSS files -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">   
 
+    <!-- Link Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Materialize Links -->
+        <!-- #1 Link Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- #2 Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Google Font Link -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Slab|Barriecito|Quicksand|Raleway|Julius+Sans+One&display=swap" rel="stylesheet">
 
     <title>Fridge Chef Page - 3</title>
@@ -36,34 +39,45 @@
 
         <div class="row">
             <div class="col s12">
-                <div class="card">
+                <div class="card" style="box-shadow:none"> 
                     <div class="card-image" id="jumbotron">
                         <img src="assets/images/jumbotronImage.jpg">
                         <span class="card-title" id="mainTitle">What I cook in a Day<p>Find your Recipe</p></span>
 
                     </div>
                 </div>
+                <button class="btn-primary btn exampleSubmit">Submit</button>
             </div>
         </div>
 
-        <div class="imgBox">
-            <div class="row">
-                <div id="recipe-images-here"></div>
-            </div> 
+
+        <div class="row">
+                <div class="col s12 m12 l12" id="cards"></div>
         </div>
+        
+        <!-- <div class="col s12 m7" id="cards">
+            <div id="recipe-images-here"></div>
+            <div class="card">
+                <div class="card-image" id="recipe-images-here">
+                    <span class="card-title" id="recipeTitle"></span>
+                </div>
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">Click to get your Recipe</a>
+                </div>
+            </div>
+        </div> -->
 
     </div>
 
 
 
-
-
-
-
-
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/moment.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    
 </body>
 
 </html>

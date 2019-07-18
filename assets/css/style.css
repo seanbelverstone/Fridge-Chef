@@ -115,9 +115,9 @@
    border-radius: 25px;
 }
 
-.card {
-   box-shadow: none;
-}
+/* .card {
+   box-shadow: none !important;
+} */
 
 #mainTitle {
    font-size: 90px;
@@ -134,4 +134,33 @@
    color: white;
    font-family: 'Amatic SC', cursive;
    text-shadow: 2px 2px grey;
+}
+
+.exampleSubmit {
+   margin-bottom: 50px;
+}
+
+.image-size img{
+height: 400px;
+}
+
+.recipe-card {
+   /* border: solid 2px black; */
+}
+
+#recipe-titles-here {
+   font-weight: bolder;
+   text-shadow: 3px 3px grey;
+}
+
+@media only screen and (max-width: 800px) {
+   #mainTitle {
+      font-size: 60px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+   }
+   #mainTitle p {
+      font-size: 50px;
+   }
 }
