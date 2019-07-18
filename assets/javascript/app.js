@@ -1,11 +1,18 @@
-$(document).on("click", ".exampleSubmit", function() {
-    var recipeArray = ['lemons', 'limes', 'bacon', 'mustard', 'yogurt'];
+//grabs the local storage info and stores it into a variable
+var recipeArray = localStorage.getItem("ingredients");
+//turns the local storage array into a string and lowercases it
+var jsonArray = JSON.stringify(recipeArray).toLowerCase();
+//replaces the commas with plus symbol to assist in the search
+var correctedArray = jsonArray.replace(/,/g, '+');
+console.log(correctedArray);
+
+
+$(document).on("click", "exampleSubmit", function() {
 
     function recipeInfo() {
-        var recipeInfo = "bacon";
 
-        var queryURL = "https://www.food2fork.com/api/search?q=" + recipeInfo + "&key=f4516eb74b92e1200c2a1de2939ba5da";
-        // console.log(queryURL);
+        var queryURL = "https://www.food2fork.com/api/search?q=" + correctedArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
+        console.log(queryURL);
 
         // my api key: 431843444431d180b6a297feea29edde
         // Jacob's api key: 41a415b9f58abaf64da0f2072369f676
