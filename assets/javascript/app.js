@@ -4,7 +4,7 @@ $(document).on("click", ".exampleSubmit", function() {
     function recipeInfo() {
         var recipeInfo = "bacon";
 
-        var queryURL = "https://www.food2fork.com/api/search?q=" + recipeInfo + "&key=569763e780e654df8c9268b64763d32f";
+        var queryURL = "https://www.food2fork.com/api/search?q=" + recipeInfo + "&key=f4516eb74b92e1200c2a1de2939ba5da";
         // console.log(queryURL);
 
         // my api key: 431843444431d180b6a297feea29edde
@@ -28,88 +28,93 @@ $(document).on("click", ".exampleSubmit", function() {
 
                 function repeatCard() {
 
-                    // FOR NEW CARDS ----------------------
-                    //creates the new card for the recipe
+                // FOR NEW CARDS ----------------------
+                    // creates the new card for the recipe
                     var newCard = $("<div>")
 
-                    //adds class 'card' to the new card made
-                    newCard = newCard.attr("class","card");
+                    // Giving newCard a class
+                        // 1. card = materialize card format (MUST HAVE)
+                        // 2. recipe-card = for style.css
+                        // 3. col s12 m6 l4 = for responsiveness with materialize 
+
+                    newCard = newCard.attr("class","card recipe-card col s12 m6 l4");
 
 
-                    // FOR IMAGES -------------------------
-                    //adds a div for the image
+                // FOR IMAGES -------------------------
+                    // adds a div for the image
                     var cardImg = $("<div>")
 
-                    //adds class and id to the image div
-                    cardImg = cardImg.attr("class", "card-image");
+                    // adds class and id to the image div
+                        // 1. card-image = materialize card format (MUST HAVE)
+                        // 2. image-size = for style.css to make all images' size from API equal to look organized
+                        // 3. recipe-images-here = where images from API get appended
+                    cardImg = cardImg.attr("class", "card-image image-size");
                     cardImg = cardImg.attr("id", "recipe-images-here");
 
-                    //creates the image tag for the recipe image
+                    // creates the image tag for the recipe image
                     var image = $("<img>");
 
-                    //adds image to the image tag
+                    //adds images from API to the image tag
                     image = image.attr("src", results.recipes[i].image_url);
 
-                    
 
-                    //appends the image to the image div
-                    cardImg.append(image);
-                    newCard.append(cardImg)
-
-
-                    // FOR TITLES -------------------------
+                // FOR TITLES -------------------------
+                    // var cardTitle = $("<span></span>");
+                    // adds a div for the title
                     var cardTitle = $("<div>");
 
+                    // adds class and id to the title div
+                        // 1. card-title = materialize card format (MUST HAVE)
+                        // 2. recipe-titles-here  = where recipe titles to append                  
                     cardTitle = cardTitle.attr("class", "card-title");
                     cardTitle = cardTitle.attr("id", "recipe-titles-here");
-                    cardTitle = cardTitle.text(results.recipes[i].title);
-
-                    newCard.append(cardTitle);
+                    caradTitle = cardTitle.text(results.recipes[i].title);
 
 
+                // FOR CONTENTS -------------------------
+                    // adds a div for the content
+                    var cardContent = $("<div>");
 
-                    // FOR LINKS to Page 4 ----------------
-                    var linkToNext = $("<div>");
+                    // adds class and id to the title div
+                        // 1. card-content = materialize card format (MUST HAVE)   
+                    cardContent = cardContent.attr("class", "card-content");
+                    cardContent = cardContent.text("This is a Sample");
 
-                    linkToNext =linkToNext.attr("class", "link-to-next");
-                    linkToNext =linkToNext.html("<a href=#>Click to get your Recipe</a>");
 
-                    newCard.append(linkToNext);
+                // FOR LINKS -------------------------
+                    // adds a div for the links
+                    var link = $("<div>");
+                    // adds class and id to the title div
+                        // 1. card-action = materialize card format (MUST HAVE)
+                    link = link.attr("class", "card-action");
 
-                    // Appending the card to the larger container
+                    // adds a clickable link
+                    var linksrc = $("<a>This is a link</a>");
+                    
+                    // link source from JSON format
+                    linksrc = linksrc.attr("href", results.recipes[i].source_url);
+
+                    
+                // Appends the image and the title to the image div
+                    cardImg.append(image);
+                    cardImg.append(cardTitle);
+
+                // Appends the link source to the link div
+                    link.append(linksrc);
+                    
+                // Appends the image div, the content div, and the link div to the new card div
+                    newCard.append(cardImg)
+                    newCard.append(cardContent);
+                    newCard.append(link);
+
+                // Appends the new card to the larger container
                     $("#cards").append(newCard);
                 }
-    
-
-
-
-
-
-                    // var newCard = $('div').attr('class', 'card');
-
-                    // var recipeImage = $("<img>");
-                    // recipeImage.attr("src", results.recipes[i].image_url);
-                    // $(".container").append(recipeImage);
-
-                    // var recipeTitle = $("<p>");
-                    // recipeTitle.text(results.recipes[i].title);
-                    // $(".container").append(recipeTitle);
-
-                    // var createCard = $("<div>");
-                    // // createCard.attr(recipeImage, recipeTitle);
-                    // createCard.attr("class", "card");
-                    // $(".container").append(newCard);
-
-                    // $.each(recipeArray), function (i) {
-                    //     var createCard = '<article class="card"><h2>' + recipes[i].title + '</h2><img>' + recipeArray[i].image_url + '</img></article>';
-                    //     $('#cards').append(createCard);
-                    // }
                 
                 repeatCard();
 
             };
         });
-        
     };
 
     recipeInfo();
