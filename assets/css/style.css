@@ -136,6 +136,18 @@ span {
    opacity: 0.9;
 }
 
+#selectedIngredients {
+   text-align: right;
+}
+
+#submit {
+   margin-right: 50%;
+   margin-left: 50%;
+}
+
+
+/* Test merge */
+/* Page three CSS */
 
 /* .card {
    box-shadow: none !important;
@@ -190,12 +202,3 @@ height: 400px;
       font-size: 50px;
    }
   
-#selectedIngredients {
-   text-align: right;
-}
-
-#submit {
-   margin-right: 50%;
-   margin-left: 50%;
-
-}
