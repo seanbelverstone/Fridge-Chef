@@ -20,7 +20,6 @@
 */
   //=============================================================
  
- 
 // Set recipe variable for concatanation purposes. CHANGE recipe variable to whatever the "Card Title" that was clicked from previous page
 // Variable set for embedded video url which was concatenated from 3 pieces: API, ingredients variable
 var recipe = "taco";
