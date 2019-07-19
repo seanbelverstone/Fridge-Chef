@@ -2,10 +2,10 @@
 
 var ingredients = {
     proteinsArray: ['Bacon', 'Beef', 'Chicken', 'Fish', 'Lamb', 'Pork', 'Shrimp', 'Turkey'],
-    grainsArray: ['Almonds', 'Brown Rice', 'Oat', 'Pasta', 'Quinoa', 'Rice', 'Walnuts', 'Wheat'],
-    fruitAndVegArray: ['Apple', 'Banana', 'Blueberries', 'Lemons', 'Tomato', 'Celery', 'Leek', 'Onion', 'Potato', 'Strawberries', 'Grapes',  'Cabbage', 'Mushrooms', 'Carrots', 'Bell Peppers', 'Broccoli', 'Cucumber'],
-    dairyArray: ['Milk', 'Cheese', 'Yogurt', 'Cream', 'Butter', 'Eggs'],
-    condimentsArray: ['Mustard', 'Mayo', 'Ketchup', 'Olive-Oil', 'Vinegar', 'Balsamic', 'Honey', 'Soy-Sauce', 'Sesame-Oil']
+    grainsArray: ['Almonds', 'Oat', 'Pasta', 'Quinoa', 'Rice', 'Walnuts', 'Wheat'],
+    fruitAndVegArray: ['Apple', 'Banana', 'Blueberries', 'Broccoli', 'Cabbage', 'Carrots', 'Celery', 'Cucumber', 'Grapes', 'Leek', 'Lemons', 'Mushrooms', 'Onion', 'Potato', 'Strawberries', 'Tomato'],
+    dairyArray: ['Butter', 'Cheese', 'Cream', 'Eggs', 'Milk', 'Yogurt'],
+    condimentsArray: ['Balsamic', 'Honey', 'Ketchup', 'Mayo', 'Mustard', 'Olive-Oil', 'Sesame-Oil', 'Soy-Sauce', 'Vinegar']
 }
 
 var selectedIngredients = [];

@@ -135,12 +135,17 @@ $(document).ready(function() {
     recipeInfo();
 
 
-    // grab localStorage data on click and create a list
-// save.addEventListener('click', function() {
-//     var storedTitle = JSON.parse(localStorage.getItem(results.recipe[i].title)); 
-//         console.log(results.recipe[i].title);
-//         console.log(storedTitle);
-// });
+                // //on recipe click
+                // save.addEventListener('click', function() {
+                //     //clear local storage
+                //     localStorage.clear();
+                //     //set recipe title to save in local storage
+                //     var storedTitle = localStorage.setItem($("recipe-titles-here").val())); 
+                //     //console log to check it's working
+                //     console.log("Recipe title below");
+                //     console.log(results.recipe[i].title);
+                //     console.log(storedTitle);
+                // });
 
 })  
 
