@@ -7,7 +7,7 @@ var correctedArray = jsonArray.replace(/,/g, '+');
 console.log(correctedArray);
 
 
-$(document).on("click", "exampleSubmit", function() {
+$(document).on("click", ".exampleSubmit", function() {
 
     function recipeInfo() {
 
