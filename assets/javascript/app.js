@@ -3,11 +3,10 @@ var recipeArray = localStorage.getItem("ingredients");
 //turns the local storage array into a string and lowercases it
 var jsonArray = JSON.stringify(recipeArray).toLowerCase();
 // //replaces the commas with plus symbol to assist in the search
-// var correctedArray = jsonArray.replace(/,/g, ', '); this isn't essential 
+// var correctedArray = jsonArray.replace(/,/g, ', ');
+// the above code that has been commented out isnt required as the documentation states that ingredients need to be separated by commas.
 console.log(jsonArray);
 
-//need to check the documentation for multi-word searches  
-//ahhhhh ingredients need to be separated by commas
 
 $(document).ready(function() {
 
