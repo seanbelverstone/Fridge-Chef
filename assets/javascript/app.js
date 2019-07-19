@@ -1,14 +1,18 @@
 //grabs the local storage info and stores it into a variable
-var recipeArray = localStorage.getItem("ingredients");
+// var recipeArray = localStorage.getItem("ingredients");
 //turns the local storage array into a string and lowercases it
-var jsonArray = JSON.stringify(recipeArray).toLowerCase();
+// var jsonArray = JSON.stringify(recipeArray).toLowerCase();
 // //replaces the commas with plus symbol to assist in the search
 // var correctedArray = jsonArray.replace(/,/g, ', ');
 // the above code that has been commented out isnt required as the documentation states that ingredients need to be separated by commas.
-console.log(jsonArray);
+// console.log(jsonArray);
 
 
 $(document).ready(function() {
+
+    var localIngredients = localStorage.getItem("ingredients");
+    var recipeArray = localIngredients.split(",");
+    console.log(recipeArray);
 
     function recipeInfo() {
 
