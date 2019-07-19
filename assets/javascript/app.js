@@ -10,6 +10,11 @@ console.log(jsonArray);
 
 $(document).ready(function() {
 
+    //loading bar appears in the cards section
+    $("#cards").append("<div class='progress'><div class='indeterminate'></div></div>");
+
+
+
     function recipeInfo() {
 
         var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
@@ -27,6 +32,8 @@ $(document).ready(function() {
 
         .then(function(response) {
             var results = JSON.parse(response);
+            //hides the progress bar once the page has finished loading
+            $(".progress").css("display", "none");
 
             $("#recipe-images-here").empty();
             console.log(response);
@@ -127,4 +134,14 @@ $(document).ready(function() {
 
     recipeInfo();
 
+
+    // grab localStorage data on click and create a list
+// save.addEventListener('click', function() {
+//     var storedTitle = JSON.parse(localStorage.getItem(results.recipe[i].title)); 
+//         console.log(results.recipe[i].title);
+//         console.log(storedTitle);
+// });
+
 })  
+
+
