@@ -2,16 +2,23 @@
 var recipeArray = localStorage.getItem("ingredients");
 //turns the local storage array into a string and lowercases it
 var jsonArray = JSON.stringify(recipeArray).toLowerCase();
-//replaces the commas with plus symbol to assist in the search
-var correctedArray = jsonArray.replace(/,/g, '+');
-console.log(correctedArray);
+// the above code that has been commented out isnt required as the documentation states that ingredients need to be separated by commas.
+console.log(jsonArray);
 
 
+<<<<<<< HEAD
 $(document).on("click", ".exampleSubmit", function() {
+=======
+$(document).ready(function() {
+
+
+    //loading bar appears in the cards section
+    $("#cards").append("<div class='progress'><div class='indeterminate'></div></div>");
+>>>>>>> ef401174f96f200da7d536d221b6d61f3eaf585a
 
     function recipeInfo() {
 
-        var queryURL = "https://www.food2fork.com/api/search?q=" + correctedArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
+        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=431843444431d180b6a297feea29edde";
         console.log(queryURL);
 
         // my api key: 431843444431d180b6a297feea29edde
@@ -26,6 +33,8 @@ $(document).on("click", ".exampleSubmit", function() {
 
         .then(function(response) {
             var results = JSON.parse(response);
+            //hides the progress bar once the page has finished loading
+            $(".progress").css("display", "none");
 
             $("#recipe-images-here").empty();
             console.log(response);
@@ -126,4 +135,19 @@ $(document).on("click", ".exampleSubmit", function() {
 
     recipeInfo();
 
+
+                // //on recipe click
+                // save.addEventListener('click', function() {
+                //     //clear local storage
+                //     localStorage.clear();
+                //     //set recipe title to save in local storage
+                //     var storedTitle = localStorage.setItem($("recipe-titles-here").val())); 
+                //     //console log to check it's working
+                //     console.log("Recipe title below");
+                //     console.log(results.recipe[i].title);
+                //     console.log(storedTitle);
+                // });
+
 })  
+
+
