@@ -2,17 +2,19 @@
 var recipeArray = localStorage.getItem("ingredients");
 //turns the local storage array into a string and lowercases it
 var jsonArray = JSON.stringify(recipeArray).toLowerCase();
-// //replaces the commas with plus symbol to assist in the search
-// var correctedArray = jsonArray.replace(/,/g, ', ');
 // the above code that has been commented out isnt required as the documentation states that ingredients need to be separated by commas.
 console.log(jsonArray);
 
 
 $(document).ready(function() {
 
+
+    //loading bar appears in the cards section
+    $("#cards").append("<div class='progress'><div class='indeterminate'></div></div>");
+
     function recipeInfo() {
 
-        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
+        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=41a415b9f58abaf64da0f2072369f676";
         console.log(queryURL);
 
         // my api key: 431843444431d180b6a297feea29edde
@@ -27,6 +29,8 @@ $(document).ready(function() {
 
         .then(function(response) {
             var results = JSON.parse(response);
+            //hides the progress bar once the page has finished loading
+            $(".progress").css("display", "none");
 
             $("#recipe-images-here").empty();
             console.log(response);
@@ -50,7 +54,7 @@ $(document).ready(function() {
 
                 // FOR IMAGES -------------------------
                     // adds a div for the image
-                    var cardImg = $("<div>")
+                    var cardImg = $("<div>");
 
                     // adds class and id to the image div
                         // 1. card-image = materialize card format (MUST HAVE)
@@ -60,10 +64,12 @@ $(document).ready(function() {
                     cardImg = cardImg.attr("id", "recipe-images-here");
 
                     // creates the image tag for the recipe image
+                    var imageLink = ($("<a href='finalpage.html'>"));
                     var image = $("<img>");
 
                     //adds images from API to the image tag
                     image = image.attr("src", results.recipes[i].image_url);
+                    imageLink.append(image);
 
 
                 // FOR TITLES -------------------------
@@ -77,54 +83,49 @@ $(document).ready(function() {
                     cardTitle = cardTitle.attr("class", "card-title");
                     cardTitle = cardTitle.attr("id", "recipe-titles-here");
                     caradTitle = cardTitle.text(results.recipes[i].title);
-
-
-                // FOR CONTENTS -------------------------
-                    // adds a div for the content
-                    var cardContent = $("<div>");
-
-                    // adds class and id to the title div
-                        // 1. card-content = materialize card format (MUST HAVE)   
-                    cardContent = cardContent.attr("class", "card-content");
-                    cardContent = cardContent.text("Recipe Title: " + results.recipes[i].title);
-
-
-                // FOR LINKS -------------------------
-                    // adds a div for the links
-                    var link = $("<div>");
-                    // adds class and id to the title div
-                        // 1. card-action = materialize card format (MUST HAVE)
-                    link = link.attr("class", "card-action");
-
-                    // adds a clickable link
-                    var linksrc = $("<a>Recipe Link</a>");
-                    
-                    // link source from JSON format
-                    linksrc = linksrc.attr("href", results.recipes[i].source_url);
-
                     
                 // Appends the image and the title to the image div
-                    cardImg.append(image);
+                    cardImg.append(imageLink);
                     cardImg.append(cardTitle);
-
-                // Appends the link source to the link div
-                    link.append(linksrc);
                     
-                // Appends the image div, the content div, and the link div to the new card div
+                // Appends the image divto the new card div
                     newCard.append(cardImg)
-                    newCard.append(cardContent);
-                    newCard.append(link);
+
 
                 // Appends the new card to the larger container
                     $("#cards").append(newCard);
                 }
                 
+
                 repeatCard();
 
+
             };
+            
         });
     };
 
     recipeInfo();
 
-})  
+
+                // //on recipe click
+                // save.addEventListener('click', function() {
+                //     //clear local storage
+                //     localStorage.clear();
+                //     //set recipe title to save in local storage
+                //     var storedTitle = localStorage.setItem($("recipe-titles-here").val())); 
+                //     //console log to check it's working
+                //     console.log("Recipe title below");
+                //     console.log(results.recipe[i].title);
+                //     console.log(storedTitle);
+                // });
+
+                
+
+});
+
+
+/*                $("img").on("click", function() {
+                    localStorage.setItem("recipeURL", ($("url")));
+                    console.log($(this));
+                })*/

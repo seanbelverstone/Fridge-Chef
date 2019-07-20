@@ -16,40 +16,153 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+    <!-- Google Font Link -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Archivo+Black|Amatic+SC|Josefin+Slab|Barriecito|Quicksand|Raleway|Julius+Sans+One&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/ef27494c2c.js"></script>
 
     <title>Fridge Chef</title>
 </head>
-<body>
-    <header>
-        <div id="topbar">
-            <div class="jumbotron">
-                    <div id="logo">
-                        <img src="assets/images/fridgecheflogo.png" width="150" height="150">
-                    </div>
-                <p>Lots of leftovers lying around?</p>
-                <p>Don't want to go out to the store?</p>
-                <p>Tired of instant ramen?</p>
-                <p>Become a gourmet chef using whatever you already have lying around!</p>
-                <p>Click the fridge to get started!</p>
 
+
+<body>
+    <div class="header" id="appHeader">
+        <div class="row">
+            <div class="col s12">
+                <div id="pageHead">
+                    <img id="logo" src="assets/images/fridgecheflogo.png">
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card darken-2"> 
+                <div class="card-image" id="jumbotron">
+                    <img src="assets/images/jumbotronImage3.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="row" id="aboutus">
+        <div class="col s12">
+            <p>ABOUT US</p>
+        </div>
+    </div> -->
+
+
+    <div class="row">
+        <div class="col s12 m6 l3" id="questionbox">
+            <div class="card blue-grey darken-2">
+                <div class="card-content white-text questionbox">
+                    <div class="row">
+                        <div class="col s5 m5 l5"></div>
+                        <div class="col s2 m2 l2">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <div class="col s5 m5 l5"></div>
+                    </div>
+
+                    <p class="flow-text">Lots of leftovers lying around?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l3" id="questionbox">
+            <div class="card blue-grey darken-2">
+                <div class="card-content white-text questionbox">
+                    <div class="row">
+                        <div class="col s5 m5 l5"></div>
+                            <div class="col s2 m2 l2">
+                                <i class="fas fa-hotdog"></i>
+                            </div>
+                        <div class="col s5 m5 l5"></div>
+                    </div>
+
+                    <p class="flow-text">Don't want to go out to the store?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l3" id="questionbox">
+            <div class="card blue-grey darken-2">
+                <div class="card-content white-text questionbox">
+                    <div class="row">
+                        <div class="col s5 m5 l5"></div>
+                            <div class="col s2 m2 l2">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                        <div class="col s5 m5 l5"></div>
+                    </div>
+
+                    <p class="flow-text">Tired of instant ramen?</p>   
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l3" id="questionbox">
+            <div class="card blue-grey darken-2">
+                <div class="card-content white-text questionbox">
+                    <div class="row">
+                        <div class="col s5 m5 l5"></div>
+                            <div class="col s2 m2 l2">
+                                <i class="fas fa-pepper-hot"></i>
+                            </div>
+                        <div class="col s5 m5 l5"></div>
+                    </div>
+
+                    <p class="flow-text">Become a gourmet chef, now!</p>
+                </div>
+            </div>
+        </div>
+        
+    </div> 
+
+
+    <div class="row" id="clickfridge">
+        <div class="col s12">
+            <p>"Click the Fridge below to get Started!"</p>
+        </div>
+    </div>
+
 
     <input type="image" src="assets/images/fridgeclosed.png" data-state="closed" closed="assets/images/fridgeclosed.png" openSrc="assets/images/fridgeopen.png" name="saveForm" class="btTxt submit" id="fridgePic" />
+    
 
 <!-- FridgeClosed: 135x225-->
 
 <!-- FridgeOpen = 267x222 -->
 
     <footer>
-        <!-- <div class="jumbotron" id="bottombar"> -->
-            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">GET STARTED</a> -->
-        <!-- </div> -->
+        <img id="footerlogo" src="assets/images/fridgecheflogo.png">
+        <p>FRIDGE CHEF &copy; 2019</p>
     </footer>
 
+
+
+
+
+
+
     <script>
+        // window.onscroll = function() {myFunction()};
+
+        // var header = document.getElementById("appHeader");
+        // var sticky = header.offsetTop;
+
+        // function myFunction() {
+        //     if (window.pageYOffset > sticky) {
+        //         header.classList.add("sticky");
+        //     } else {
+        //         header.classList.remove("sticky");
+        //     }
+        // }
+
         // JavaScript function that wraps everything
         $(document).ready(function() {
 
@@ -81,15 +194,19 @@
                     // update the data-state attribute to 'closed'
                     $(this).attr("data-state", "closed");
                 }
+
+                //after 2 seconds, load the next page.
+                setTimeout(function() {
+                    //will need to change this url when GitHub pages has loaded
+                    window.location.href="https://xisifer.github.io/fridge-chef/ingredients.html";
+                }, 500);
+            });
+
             });
 
 
-
-
-
-
-        });
     </script>
     
 </body>
+
 </html>
