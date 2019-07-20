@@ -83,6 +83,6 @@ What's left to do:
 1. Replace the recipe variable with the title of the card that was clicked on previous page
         a. Have the onclicked title saved onto local storage DONE
         b. insert this title into recipe variable DONE
-2. Grab page url/recipe and slap into body of email message
+2. Grab page url/recipe and slap into body of email message DONE
 ====================================================*/
 
