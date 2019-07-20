@@ -1,0 +1,349 @@
+/* Welcome Page Styling */
+body {
+   background-image: url(https://www.larutadelsorigens.cat/wallpic/full/13-136906_white-wood-wallpaper-white-background-grey-wooden-plank.jpg);
+
+   background-size: cover;
+   background-position:center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   opacity: 0.8;
+}
+
+.header {
+   padding-top: 30px;
+   padding-bottom: 10px;
+}
+
+#logo {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 150px;
+   height: 150px;
+   opacity: 0.9;
+   text-align: center;
+}
+
+#jumbotron img{
+   width: 100%;
+   height: 300px;
+}
+
+/* #aboutus {
+   color: rgb(27, 27, 27);
+   font-size: 60px;
+   font-family: 'Archivo Black', sans-serif;
+   margin-top: 100px;
+   margin-bottom: 50px;
+   text-align: center;
+} */
+
+
+.blue-grey {
+   min-height: 170px;
+   font-size: 30px;
+   font-family: 'Julius Sans One', sans-serif;
+   opacity: 0.9;
+   border-radius: 10px;
+   border: 3px dashed black;
+   text-align: center;
+}
+
+.transparent {
+   height: 170px;
+   font-size: 30px;
+   font-family: 'Julius Sans One', sans-serif;
+   opacity: 0.8;
+   border-radius: 10px;
+   border: 3px dashed black;
+   text-align: center;
+}
+
+.fas {
+   font-size: 45px;
+}
+
+.fa-hamburger {
+   color: orange;
+}
+
+.fa-hotdog {
+   color: rgb(216, 140, 178);
+}
+
+.fa-fish {
+   color: rgb(40, 241, 241);
+}
+
+.fa-pepper-hot {
+   color: red;
+}
+
+#clickfridge {
+   text-align: center;
+   font-family: 'Amatic SC', cursive;
+   font-size: 60px;
+   font-weight: bolder;
+   color: rgb(27, 27, 27);
+   margin-bottom: 60px;
+   margin-top: 40px;
+}
+
+#fridgePic {
+   text-align:center;
+   margin-left:43%;
+   margin-right:48%;
+   width: 400px;
+   height: 600px;
+   margin-bottom: 80px;
+}
+
+#fridgePic {
+   text-align:center;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   height: auto;
+}
+
+footer {
+   background-color: rgb(117, 135, 136);
+   bottom: 0px;
+   border-top: 2px dashed black;
+}
+
+#footerlogo {
+   display: block;
+   margin: 30px auto 30px auto;
+   width: 150px;
+   height: 150px;
+   opacity: 0.9;
+   text-align: center;
+}
+
+footer p {
+   text-align: center;
+   color: white;
+   font-family: 'Amatic SC', cursive;
+   font-size: 30px;
+   font-weight: bolder;
+   padding-bottom: 20px;
+}
+
+
+
+/*Ingredients page styling*/
+
+#selectedIngredients {
+   margin-left: 100px;
+}
+
+#fridgeContainer {
+   position: relative;
+}
+
+#fridge {
+   width: 130%;
+   height: auto;
+   margin-left: 15px;
+}
+
+#protein {
+   width: 50%;
+   height: auto;
+   position: absolute;
+   bottom: 34%;
+   left: 25%;
+}
+
+#ingredientSection {
+   padding-bottom:20px;
+}
+
+.checkBox {
+   color:white;
+}
+
+#ingredients {
+   text-align:left;
+   height:auto;
+   background-color:rgb(189, 189, 189);
+   border: 3px dashed black;
+}
+
+span {
+   font-family: 'Indie Flower', cursive;
+   color:black;
+   padding:10px;
+   margin:5px;
+}
+
+[type="checkbox"]+span:not(.lever) {
+   font-size: 1.5rem;
+   padding-top:0px;
+}
+/* span::before {
+   padding: auto 5px;
+} */
+
+
+#protein:hover {
+   transition: .5s ease;
+   width: 55%;
+   opacity: 0.9;
+}
+
+#fruitAndVeg {
+   width: 26%;
+   height: auto;
+   position: absolute;
+   bottom: 16%;
+   left: 55%;
+}
+
+#fruitAndVeg:hover {
+   transition: .5s ease;
+   width: 31%;
+   opacity: 0.9;
+}
+
+#grains {
+   width: 20%;
+   height: auto;
+   position: absolute;
+   bottom: 19%;
+   left: 20%;
+}
+
+#grains:hover {
+   transition: .5s ease;
+   width: 25%;
+   opacity: 0.9;
+}
+
+#dairy {
+   width: 15%;
+   height: auto;
+   position: absolute;
+   bottom: 62%;
+   left: 20%;
+}
+
+#dairy:hover {
+   transition: .5s ease;
+   width: 20%;
+   opacity: 0.9;
+}
+
+#condiments {
+   width: 20%;
+   height: auto;
+   position: absolute;
+   bottom: 63%;
+   left: 65%;
+}
+
+#condiments:hover {
+   transition: .5s ease;
+   width: 25%;
+   opacity: 0.9;
+}
+
+
+#selectedIngredients {
+   text-align: right;
+   height:auto;
+   background-color:rgb(189, 189, 189);
+   border: 3px dashed black;
+   font-family: 'Indie Flower', cursive;
+   font-size: 1.5rem;
+   margin-top:5px;
+   margin-left: 40%;
+}
+
+#foodGroupTitle {
+   font-family: 'Indie Flower', cursive;
+   margin-left:15px;
+   /* text-align:center; */
+}
+
+li {
+   padding:5px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+#submit {
+   margin-right: 50%;
+   margin-left: 43%;
+   padding: 20px 75px 50px 75px;
+   vertical-align:middle;
+
+}
+
+/* Page three CSS */
+
+.card {
+   border-radius: 10px;
+}
+
+#mainTitle {
+   font-size: 90px;
+   color: white;
+   font-family: 'Amatic SC', cursive;
+   font-weight: bolder;
+   text-shadow: 3px 3px grey;
+   margin-left: 20px;
+}
+
+#mainTitle p {
+   /* margin-bottom: 30px; */
+   font-size: 70px;
+   color: white;
+   font-family: 'Amatic SC', cursive;
+   text-shadow: 2px 2px grey;
+}
+
+.exampleSubmit {
+   margin-bottom: 50px;
+}
+
+.image-size img{
+height: 400px;
+}
+
+/* .recipe-card {
+   border: solid 2px black;
+} */
+
+.card-content {
+   height: 100px;
+}
+
+label {
+   color:rgb(92, 92, 92);
+   padding:5px;
+}
+
+#recipe-titles-here {
+   font-weight: bolder;
+   text-shadow: 3px 3px grey;
+}
+
+/* #pageHead {
+   background-color: rgb(234,238,242);
+
+} */
+
+@media only screen and (max-width: 800px) {
+   #mainTitle {
+      font-size: 60px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+   }
+   #mainTitle p {
+      font-size: 50px;
+   }
+  
+
