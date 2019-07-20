@@ -39,7 +39,12 @@ $(document).ready(function() {
             $("#recipe-images-here").empty();
             console.log(response);
 
-
+            if (results.count === 0) {
+                var notice = $("<div>");
+                notice.append("<p class=notice>Oops! Looks like there aren't any recipes for that search.</p>");
+                notice.append("<p class=notice>Please try refining your ingredients</p>");
+                $("#cards").append(notice);
+            }
 
             for (var i = 0; i < results.recipes.length; i++) {
                 console.log(results.recipes[i]);
