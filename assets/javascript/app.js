@@ -85,12 +85,12 @@ $(document).ready(function() {
 
                 // FOR CONTENTS -------------------------
                     // adds a div for the content
-                    var cardContent = $("<div>");
+                    // var cardContent = $("<div>");
 
                     // adds class and id to the title div
                         // 1. card-content = materialize card format (MUST HAVE)   
-                    cardContent = cardContent.attr("class", "card-content");
-                    cardContent = cardContent.text("Recipe Title: " + results.recipes[i].title);
+                    // cardContent = cardContent.attr("class", "card-content");
+                    // cardContent = cardContent.text("Recipe Title: " + results.recipes[i].title);
 
 
                 // FOR LINKS -------------------------
