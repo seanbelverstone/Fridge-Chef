@@ -233,62 +233,38 @@ span {
 
 /* Page three CSS */
 
-.card {
-   border-radius: 10px;
-}
-
-#mainTitle {
-   font-size: 90px;
-   color: white;
+#clickimagemsg {
+   text-align: center;
    font-family: 'Amatic SC', cursive;
+   font-size: 60px;
    font-weight: bolder;
-   text-shadow: 3px 3px grey;
-   margin-left: 20px;
+   color: rgb(27, 27, 27);
+   margin-bottom: 60px;
+   margin-top: 40px;
 }
 
-#mainTitle p {
-   /* margin-bottom: 30px; */
-   font-size: 70px;
-   color: white;
-   font-family: 'Amatic SC', cursive;
-   text-shadow: 2px 2px grey;
-}
-
-.exampleSubmit {
-   margin-bottom: 50px;
+.card-content {
+   font-size: 20px;
+   font-family: 'Julius Sans One', sans-serif;
+   font-weight: bolder;
+   min-height: 100px;
+   vertical-align: middle;
 }
 
 .image-size img{
-height: 400px;
+   height: 400px;
 }
 
-/* .recipe-card {
-   border: solid 2px black;
-} */
-
-.card-content {
-   height: 100px;
+.recipe-card {
+   width: 369px !important;
+   border: 5px solid rgb(117, 135, 136);
 }
 
-#recipe-titles-here {
-   font-weight: bolder;
-   text-shadow: 3px 3px grey;
+.container {
+   background-color: rgb(117, 135, 136);
+   margin-bottom: 30px;
 }
 
-/* #pageHead {
-   background-color: rgb(234,238,242);
 
-} */
-
-@media only screen and (max-width: 800px) {
-   #mainTitle {
-      font-size: 60px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-   }
-   #mainTitle p {
-      font-size: 50px;
-   }
   
 
