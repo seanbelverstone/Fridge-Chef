@@ -18,8 +18,9 @@
  
 // Set recipe variable for concatanation purposes. CHANGE recipe variable to whatever the "Card Title" that was clicked from previous page
 // Variable set for embedded video url which was concatenated from 3 pieces: API, ingredients variable
-var recipe = "bacon wrapped jalapeno";
-var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAJKq4nry6sTao5faz_V2mxmYnAOwrYyF0&q=" + recipe +"recipe&part=snippet";
+
+var recipe = getObject;
+var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAJKq4nry6sTao5faz_V2mxmYnAOwrYyF0&q=" + getObject +"recipe&part=snippet";
 
 // DZ: Ajax call
 $.ajax(
@@ -62,7 +63,27 @@ $("#add-user").on("click", function(event) {
 });
 
 // By default display the content from localStorage
-$("#recipe").text(localStorage.getItem("recipe"));
+// $("#recipe").text(localStorage.getItem("recipe"));
+
+getObject = JSON.parse(localStorage.getItem(results.recipe[i].title));
+    console.log(results.recipe[i].title);
+
+/* Would this be used to store clicked onbject locally?
+    $('This').on("click", function(event) {
+        event.preventDefault();
+        var recipe = $('This).val().trim();
+            console.log(recipe)
+        localStorage.clear();
+        localStorage.setItem("recipe", recipe);
+    });
+
+    ||
+
+    // grab localStorage data on click and create a list
+save.addEventListener('click', function() {
+    var storedTitle = JSON.parse(localStorage.getItem(results.recipe[i].title)); 
+        console.log(results.recipe[i].title);
+});
 
     
     
