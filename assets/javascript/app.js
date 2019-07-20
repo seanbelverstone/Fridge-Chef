@@ -14,13 +14,16 @@ $(document).ready(function() {
 
     function recipeInfo() {
 
-        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=41a415b9f58abaf64da0f2072369f676";
+        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=4ed288ed4b4af47c2487c9d1b2640147";
+
         console.log(queryURL);
 
         // my api key: 431843444431d180b6a297feea29edde
         // Jacob's api key: 41a415b9f58abaf64da0f2072369f676
         // Scott's api key: f4516eb74b92e1200c2a1de2939ba5da
         // KH's api key: 569763e780e654df8c9268b64763d32f
+        // Danniel's api key: ed24f7b0cbe2cc006d00257869dbe9b7
+        // Sean's api key: 4ed288ed4b4af47c2487c9d1b2640147 
 
         $.ajax({
             url: queryURL,
@@ -34,6 +37,8 @@ $(document).ready(function() {
 
             $("#recipe-images-here").empty();
             console.log(response);
+
+
 
             for (var i = 0; i < results.recipes.length; i++) {
                 console.log(results.recipes[i]);
@@ -64,41 +69,47 @@ $(document).ready(function() {
                     cardImg = cardImg.attr("id", "recipe-images-here");
 
                     // creates the image tag for the recipe image
-                    var imageLink = ($("<a href='finalpage.html'>"));
+                    var imageLink = $("<a href=finalpage.html>");
                     var image = $("<img>");
 
                     //adds images from API to the image tag
                     image = image.attr("src", results.recipes[i].image_url);
                     imageLink.append(image);
 
-
-                // FOR TITLES -------------------------
-                    // var cardTitle = $("<span></span>");
-                    // adds a div for the title
-                    var cardTitle = $("<div>");
+                // FOR CONTENTS -------------------------
+                    // adds a div for the content
+                    var cardContent = $("<div>");
 
                     // adds class and id to the title div
-                        // 1. card-title = materialize card format (MUST HAVE)
-                        // 2. recipe-titles-here  = where recipe titles to append                  
-                    cardTitle = cardTitle.attr("class", "card-title");
-                    cardTitle = cardTitle.attr("id", "recipe-titles-here");
-                    caradTitle = cardTitle.text(results.recipes[i].title);
+                        // 1. card-content = materialize card format (MUST HAVE)   
+                    cardContent = cardContent.attr("class", "card-content");
+
+                    cardContent = cardContent.text("# " + results.recipes[i].title)
+
+                    cardContent = cardContent.text(results.recipes[i].title);
+                    image = image.attr("name", results.recipes[i].title);
+                    image = image.attr("onClick", "reply_click(this)");
                     
+
                 // Appends the image and the title to the image div
                     cardImg.append(imageLink);
-                    cardImg.append(cardTitle);
-                    
-                // Appends the image divto the new card div
-                    newCard.append(cardImg)
+                    // cardImg.append(cardTitle);
 
+                // Appends the link source to the link div
+                    // link.append(linksrc);
+                    
+                // Appends the image div, the content div, and the link div to the new card div
+                    newCard.append(cardImg)
+                    newCard.append(cardContent);
+                    // newCard.append(link);
 
                 // Appends the new card to the larger container
                     $("#cards").append(newCard);
+
                 }
                 
 
                 repeatCard();
-
 
             };
             
@@ -125,7 +136,9 @@ $(document).ready(function() {
 });
 
 
-/*                $("img").on("click", function() {
-                    localStorage.setItem("recipeURL", ($("url")));
-                    console.log($(this));
-                })*/
+function reply_click(clicked_object)
+{
+     var recipeTitle = (clicked_object.getAttribute('name'));
+     console.log("The recipe title is: " + recipeTitle);
+     localStorage.setItem("recipe title", recipeTitle);
+}
