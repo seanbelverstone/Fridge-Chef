@@ -83,7 +83,6 @@ $(document).ready(function() {
                     cardTitle = cardTitle.attr("class", "card-title");
                     cardTitle = cardTitle.attr("id", "recipe-titles-here");
                     caradTitle = cardTitle.text(results.recipes[i].title);
-
                     
                 // Appends the image and the title to the image div
                     cardImg.append(imageLink);
