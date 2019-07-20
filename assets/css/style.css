@@ -186,12 +186,76 @@ span {
    padding: auto 5px;
 } */
 
+#protein {
+   width: 50%;
+   height: auto;
+   position: absolute;
+   bottom: 34%;
+   left: 25%;
+}
 
 #protein:hover {
    transition: .5s ease;
-@@ -249,103 +222,49 @@ span {
+   width: 55%;
    opacity: 0.9;
 }
+
+#fruitAndVeg {
+   width: 26%;
+   height: auto;
+   position: absolute;
+   bottom: 16%;
+   left: 55%;
+}
+
+#fruitAndVeg:hover {
+   transition: .5s ease;
+   width: 31%;
+   opacity: 0.9;
+}
+
+#grains {
+   width: 20%;
+   height: auto;
+   position: absolute;
+   bottom: 19%;
+   left: 20%;
+}
+
+#grains:hover {
+   transition: .5s ease;
+   width: 25%;
+   opacity: 0.9;
+}
+
+#dairy {
+   width: 15%;
+   height: auto;
+   position: absolute;
+   bottom: 62%;
+   left: 20%;
+}
+
+#dairy:hover {
+   transition: .5s ease;
+   width: 20%;
+   opacity: 0.9;
+}
+
+#condiments {
+   width: 20%;
+   height: auto;
+   position: absolute;
+   bottom: 63%;
+   left: 65%;
+}
+
+#condiments:hover {
+   transition: .5s ease;
+   width: 25%;
+   opacity: 0.9;
+}
+
 
 
 #selectedIngredients {
@@ -235,6 +299,9 @@ li {
 #mainTitle {
    font-size: 90px;
    color: white;
+}
+
+
 #clickimagemsg {
    text-align: center;
    font-family: 'Amatic SC', cursive;
@@ -280,6 +347,8 @@ height: 400px;
 label {
    color:rgb(92, 92, 92);
    padding:5px;
+}
+
 .image-size img{
    height: 400px;
 }
@@ -287,6 +356,8 @@ label {
 #recipe-titles-here {
    font-weight: bolder;
    text-shadow: 3px 3px grey;
+}
+
 .recipe-card {
    width: 369px !important;
    border: 5px solid rgb(117, 135, 136);
