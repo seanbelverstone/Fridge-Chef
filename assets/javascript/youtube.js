@@ -3,11 +3,7 @@
   //=============================================================
 // PSEUDOCODE TIIIIIIME!!!!! :partyparrot:
   //=============================================================
-/* 1. Scott/Sean's Ingredients page spits out an Array
-    ["Cheese," "Beef, "Onions"]
-2. Ryan's page TAKES that Array, and Stringifys it into a series of strings
-    Cheese Beef Onions
-3. Ryan's page TAKES the strings, and FEEDS them into the Edamam API to find a Tacos recipe
+/*
 4. Taco Recipe is stored in a....variable?
 5. When user clicks the link to go to Daniel's page, the Taco Recipe variable is sent along WITH the user's link to the page
     Taco Recipe
@@ -20,10 +16,9 @@
 */
   //=============================================================
  
- 
 // Set recipe variable for concatanation purposes. CHANGE recipe variable to whatever the "Card Title" that was clicked from previous page
 // Variable set for embedded video url which was concatenated from 3 pieces: API, ingredients variable
-var recipe = "taco";
+var recipe = "bacon wrapped jalapeno";
 var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAJKq4nry6sTao5faz_V2mxmYnAOwrYyF0&q=" + recipe +"recipe&part=snippet";
 
 // DZ: Ajax call
@@ -32,7 +27,7 @@ $.ajax(
         "url": url
     }
 ).then(function(result){
-// on ajax call success, it will grab the first element of the results and getting the id and video id
+// on ajax call success, it will grab the first element of the results and getting the id and video id. Ultimately, the video id
     console.log(result.items[0].id.videoId);
 // taking the above info to fill out an iframe and add attributes to it- height, width, autoplay, and source
     var iFrame = $("<iframe>");
@@ -43,3 +38,31 @@ $.ajax(
 //selects id to append and adds iframe
     $("#embedVideo").append(iFrame);
 });
+
+/*====================================================
+What's left to do:
+1. Replace the recipe variable with the title of the card that was clicked on previous page
+        a. Have the onclicked title saved onto local storage
+        b. insert this title into recipe variable
+2. Grab page url/recipe and slap into body of email message
+====================================================*/
+
+// Capture Button Click - !! What did Ryan Call this on his page?!!
+$("#add-user").on("click", function(event) {
+    // prevent page from refreshing when form tries to submit itself
+    event.preventDefault();
+    // Capture user input and stores it into variables
+    var recipe = $("#name-input").val().trim(); 
+    // Console log each of the user inputs to confirm we are receiving them
+    console.log(recipe);
+    // Clear localStorage
+    localStorage.clear();
+    // Store all content into localStorage
+    localStorage.setItem("recipe", recipe);   
+});
+
+// By default display the content from localStorage
+$("#recipe").text(localStorage.getItem("recipe"));
+
+    
+    
