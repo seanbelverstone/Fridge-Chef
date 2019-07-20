@@ -80,17 +80,48 @@ $(document).ready(function() {
                     // adds class and id to the title div
                         // 1. card-title = materialize card format (MUST HAVE)
                         // 2. recipe-titles-here  = where recipe titles to append                  
-                    cardTitle = cardTitle.attr("class", "card-title");
-                    cardTitle = cardTitle.attr("id", "recipe-titles-here");
-                    caradTitle = cardTitle.text(results.recipes[i].title);
+                    // cardTitle = cardTitle.attr("class", "card-title");
+                    // cardTitle = cardTitle.attr("id", "recipe-titles-here");
+                    // cardTitle = cardTitle.text(results.recipes[i].title);
+
+
+                // FOR CONTENTS -------------------------
+                    // adds a div for the content
+                    var cardContent = $("<div>");
+
+                    // adds class and id to the title div
+                        // 1. card-content = materialize card format (MUST HAVE)   
+                    cardContent = cardContent.attr("class", "card-content");
+                    cardContent = cardContent.text(results.recipes[i].title);
+
+
+                // FOR LINKS -------------------------
+                    // adds a div for the links
+                    // var link = $("<div>");
+                    // // adds class and id to the title div
+                    //     // 1. card-action = materialize card format (MUST HAVE)
+                    // link = link.attr("class", "card-action");
+
+                    // // adds a clickable link
+                    // var linksrc = $("<a>Recipe Link</a>");
+
+                    // linksrc.addClass("url" + [i]);
+                    
+                    // // link source from JSON format
+                    // linksrc = linksrc.attr("href", results.recipes[i].source_url);
+
                     
                 // Appends the image and the title to the image div
                     cardImg.append(imageLink);
-                    cardImg.append(cardTitle);
-                    
-                // Appends the image divto the new card div
-                    newCard.append(cardImg)
+                    // cardImg.append(cardTitle);
 
+                // Appends the link source to the link div
+                    // link.append(linksrc);
+                    
+                // Appends the image div, the content div, and the link div to the new card div
+                    newCard.append(cardImg)
+                    newCard.append(cardContent);
+                    // newCard.append(link);
 
                 // Appends the new card to the larger container
                     $("#cards").append(newCard);
