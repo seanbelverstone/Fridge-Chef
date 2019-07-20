@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     function recipeInfo() {
 
-        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
+        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=431843444431d180b6a297feea29edde";
         console.log(queryURL);
 
         // my api key: 431843444431d180b6a297feea29edde
