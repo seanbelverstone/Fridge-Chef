@@ -1,7 +1,5 @@
 /* Welcome Page Styling */
 body {
-   /* background-image: url(https://img.freepik.com/free-photo/background-gray-cement-wall-with-wooden-texture_1372-571.jpg?size=626&ext=jpg); */
-   /* background-image: url(http://aguaprieta.info/wp-content/uploads/2019/03/white-wood-background-white-wood-floor-backdrop-newborn-indoor-vinyl-photography-photo-studio-props-model-background-portrait-cake-art-fabric-white-wood-background-freepik.jpg); */
    background-image: url(https://www.larutadelsorigens.cat/wallpic/full/13-136906_white-wood-wallpaper-white-background-grey-wooden-plank.jpg);
 
    background-size: cover;
@@ -12,73 +10,83 @@ body {
 }
 
 .header {
-   margin-top: 30px;
-   margin-bottom: 30px;
-}
-
-.sticky {
-   position: fixed;
-   top: 0;
-   width: 100%;
-}
- 
-.sticky + .content {
-padding-top: 102px;
+   padding-top: 30px;
+   padding-bottom: 10px;
 }
 
 #logo {
    display: block;
    margin-left: auto;
    margin-right: auto;
-   width: 200px;
-   height: 200px;
+   width: 150px;
+   height: 150px;
    opacity: 0.9;
    text-align: center;
-   /* float: left; */
 }
 
 #jumbotron img{
-   /* border-radius: 30px; */
-   /* height: 700px; */
    width: 100%;
+   height: 300px;
 }
 
-#aboutus {
-   /* color: rgb(45, 83, 83); */
+/* #aboutus {
    color: rgb(27, 27, 27);
    font-size: 60px;
    font-family: 'Archivo Black', sans-serif;
    margin-top: 100px;
    margin-bottom: 50px;
    text-align: center;
-}
+} */
+
 
 .blue-grey {
-   height: 200px;
+   min-height: 170px;
+   font-size: 30px;
+   font-family: 'Julius Sans One', sans-serif;
+   opacity: 0.9;
+   border-radius: 10px;
+   border: 3px dashed black;
+   text-align: center;
+}
+
+.transparent {
+   height: 170px;
    font-size: 30px;
    font-family: 'Julius Sans One', sans-serif;
    opacity: 0.8;
    border-radius: 10px;
-   border: 2px dashed black;
+   border: 3px dashed black;
+   text-align: center;
 }
 
 .fas {
-   margin-bottom: 20px;
-   position: relative;
+   font-size: 45px;
+}
+
+.fa-hamburger {
    color: orange;
+}
+
+.fa-hotdog {
+   color: rgb(216, 140, 178);
+}
+
+.fa-fish {
+   color: rgb(40, 241, 241);
+}
+
+.fa-pepper-hot {
+   color: red;
 }
 
 #clickfridge {
    text-align: center;
-   font-family: 'Dancing Script', cursive;
-   /* font-family: 'Julius Sans One', sans-serif; */
+   font-family: 'Amatic SC', cursive;
    font-size: 60px;
    font-weight: bolder;
    color: rgb(27, 27, 27);
-   /* color: rgb(65, 64, 64); */
-   /* color: rgb(45, 83, 83); */
-   margin-bottom: 100px;
-   margin-top: 50px;
+   margin-bottom: 60px;
+   margin-top: 40px;
 }
 
 #fridgePic {
@@ -87,7 +95,7 @@ padding-top: 102px;
    margin-right:48%;
    width: 400px;
    height: 600px;
-   margin-bottom: 100px;
+   margin-bottom: 80px;
 }
 
 #fridgePic {
@@ -106,11 +114,9 @@ footer {
 
 #footerlogo {
    display: block;
-   margin: 50px auto 30px auto;
-   /* margin-left: auto;
-   margin-right: auto; */
-   width: 180px;
-   height: 180px;
+   margin: 30px auto 30px auto;
+   width: 150px;
+   height: 150px;
    opacity: 0.9;
    text-align: center;
 }
@@ -118,10 +124,12 @@ footer {
 footer p {
    text-align: center;
    color: white;
-   font-size: 20px;
+   font-family: 'Amatic SC', cursive;
+   font-size: 30px;
    font-weight: bolder;
    padding-bottom: 20px;
 }
+
 
 
 /*Ingredients page styling*/
