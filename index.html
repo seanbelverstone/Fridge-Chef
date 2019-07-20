@@ -194,7 +194,16 @@
                     // update the data-state attribute to 'closed'
                     $(this).attr("data-state", "closed");
                 }
+
             });
+
+                //after 2 seconds, load the next page.
+                setTimeout(function() {
+                    //will need to change this url when GitHub pages has loaded
+                    window.location.href="file:///C:/Users/shoob/fridge-chef/ingredients.html";
+                }, 2000);
+            })
+
 
         });
     </script>
