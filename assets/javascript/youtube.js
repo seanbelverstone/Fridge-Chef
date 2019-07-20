@@ -19,8 +19,8 @@
 // Set recipe variable for concatanation purposes. CHANGE recipe variable to whatever the "Card Title" that was clicked from previous page
 // Variable set for embedded video url which was concatenated from 3 pieces: API, ingredients variable
 
-var recipe = getObject;
-var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAJKq4nry6sTao5faz_V2mxmYnAOwrYyF0&q=" + getObject +"recipe&part=snippet";
+var recipe = "recipe";
+var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAJKq4nry6sTao5faz_V2mxmYnAOwrYyF0&q=" + recipe +"recipe&part=snippet";
 
 // DZ: Ajax call
 $.ajax(
@@ -49,18 +49,18 @@ What's left to do:
 ====================================================*/
 
 // Capture Button Click - !! What did Ryan Call this on his page?!!
-$("#add-user").on("click", function(event) {
-    // prevent page from refreshing when form tries to submit itself
-    event.preventDefault();
-    // Capture user input and stores it into variables
-    var recipe = $("#name-input").val().trim(); 
-    // Console log each of the user inputs to confirm we are receiving them
-    console.log(recipe);
-    // Clear localStorage
-    localStorage.clear();
-    // Store all content into localStorage
-    localStorage.setItem("recipe", recipe);   
-});
+// $("#add-user").on("click", function(event) {
+//     // prevent page from refreshing when form tries to submit itself
+//     event.preventDefault();
+//     // Capture user input and stores it into variables
+//     var recipe = $("#name-input").val().trim(); 
+//     // Console log each of the user inputs to confirm we are receiving them
+//     console.log(recipe);
+//     // Clear localStorage
+//     localStorage.clear();
+//     // Store all content into localStorage
+//     localStorage.setItem("recipe", recipe);   
+// });
 
 // By default display the content from localStorage
 // $("#recipe").text(localStorage.getItem("recipe"));
@@ -68,22 +68,18 @@ $("#add-user").on("click", function(event) {
 getObject = JSON.parse(localStorage.getItem(results.recipe[i].title));
     console.log(results.recipe[i].title);
 
-/* Would this be used to store clicked onbject locally?
-    $('This').on("click", function(event) {
-        event.preventDefault();
-        var recipe = $('This).val().trim();
-            console.log(recipe)
-        localStorage.clear();
-        localStorage.setItem("recipe", recipe);
-    });
 
-    ||
+// Would this be used to store clicked onbject locally?
+    // $('This').on("click", function(event) {
+    //     event.preventDefault();
+    //     var recipe = $(This.val().trim());
+    //         console.log(recipe)
+    //     localStorage.clear();
+    //     localStorage.setItem("recipe", recipe);
+    // });
 
-    // grab localStorage data on click and create a list
-save.addEventListener('click', function() {
-    var storedTitle = JSON.parse(localStorage.getItem(results.recipe[i].title)); 
-        console.log(results.recipe[i].title);
-});
-
-    
-    
+// grab localStorage data on click and create a list
+// save.addEventListener('click', function() {
+//     var storedTitle = JSON.parse(localStorage.getItem(results.recipe[i].title)); 
+//         console.log(results.recipe[i].title);
+//     })

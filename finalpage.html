@@ -9,13 +9,16 @@
     <link rel= "stylesheet" href= "./assets/css/finalpage_css.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     
     <title>Final Recipe!</title>
 
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <div id="topbar">
             <div class="jumbotron">
                     <div id="logo">
@@ -23,44 +26,47 @@
                     </div>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <div class="container-fluid">
         <div class="container" id= "recipe">
-            <h4>Here's your recipe!</h4>
-            </div>
-            
-
-        <div class= "boxed" id= "recipe_Img"
-            >Insert Recipe and Image
-            </div>
-        </div>          
-
-        <div id="embedVideo">
+            <h2>Here's your recipe!</h2>
             </div>
 
-<<<<<<< HEAD
-    <div class= "container" id= "email">
-        <button type="button" >
-            <a href = "mailto:?subject=Fridge Chef: Here's Your Recipe!&body=www.insertlinkhere.com ">
-=======
-    <div class="container" id= "email">
         <div class="row">
-            <div class="col s4">
-                <button type="button" >
-                <a href = "mailto:abc@example.com?subject = Feedback&body = Message">
->>>>>>> 67a17f79611c07a41d1fa6b183a81cffa83fc05a
-                Email Recipe to Yourself! </a>
-                </button>
+            <div class="col lg6">
+                <div class="col s12 m6 l3" id="recipe_Img">
+                    <div class="card blue-grey darken-2">
+                        <div class="card-content white-text questionbox">Insert Recipe and Image
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col lg6">
+                <div id="embedVideo"></div>
             </div>
         </div>
+
+        
+        
+
+        <!-- <div class= "boxed blue-grey" id= "recipe_Img"
+            >Insert Recipe and Image
+            </div>
+        </div>           -->
+
+
+    <div class= "container" id= "email">
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+            <a href = "mailto:?subject=Fridge Chef: Here's Your Recipe!&body=www.insertlinkhere.com "><p class="buttontext">Email Recipe to Yourself!</p></a>
+        </button>
     </div>
     
     <div class="row">
         <div class="col s12">
             <button class="btn waves-effect waves-light" type="submit" name="action">
                 <a href="index.html">
-                Return to Main Menu
+                    <p class="buttontext">Return to Main Menu</p>
                 </a>
             </button>
         </div>
