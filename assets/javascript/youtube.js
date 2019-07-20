@@ -62,6 +62,7 @@ What's left to do:
 //     localStorage.setItem("recipe", recipe);   
 // });
 
+<<<<<<< HEAD
 // By default display the content from localStorage
 // $("#recipe").text(localStorage.getItem("recipe"));
 
@@ -83,3 +84,20 @@ getObject = JSON.parse(localStorage.getItem(results.recipe[i].title));
 //     var storedTitle = JSON.parse(localStorage.getItem(results.recipe[i].title)); 
 //         console.log(results.recipe[i].title);
 //     })
+=======
+// // By default display the content from localStorage
+// $("#recipe").text(localStorage.getItem("recipe"));
+
+    
+    
+$(function () {
+    $('#email').click(function (event) {
+      var email = 'sample@gmail.com';
+      var subject = 'Test';
+      var emailBody = 'Hi Sample,';
+      var attach = 'path';
+      document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody+
+          "?attach="+attach;
+    });
+  });
+>>>>>>> c19fb0e50cc7356e5fd329db54284c1afe47a591

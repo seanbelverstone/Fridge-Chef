@@ -13,9 +13,13 @@
 <body>
 
     <div class="container">
-        <div class="row" id="heading">
-            <div class="col s12">
-                <img src="assets/images/fridgecheflogo.png" alt="logo" id="logo">
+        <div class="header" id="appHeader">
+            <div class="row">
+                <div class="col s12">
+                    <div id="pageHead">
+                        <img id="logo" src="assets/images/fridgecheflogo.png">
+                    </div>
+                </div>
             </div>
         </div>
     <!-- no comment -->
@@ -24,9 +28,9 @@
                 <div id="ingredients">
                     <div id="foodGroupImage"></div>
                     <br>
-                    <h4 id="foodGroupTitle"></h4>
+                    <h4 id="foodGroupTitle">Ingredient Type</h4>
                     <!-- Ingredients from selected food group will append here -->
-                    <form action="#" id="ingredientSection">
+                    <form action="#" id="ingredientSection" > <!-- class="blue-grey"-->
 
                     </form>
                 </div>
@@ -42,7 +46,7 @@
             </div>
             <div class="col s12 l4">
                 <div id="selectedIngredients">
-                    <h2>Selected ingredients:</h2>
+                    <h4>Selected ingredients:</h4>
                         <div id="selectedIngredientsList">
                             <!-- Ingredients that have already been selected will append here -->
                         </div>
@@ -65,6 +69,10 @@
 
         <!-- <button >execute</button> -->
         </div> <!-- Closing container div --> 
+    <footer>
+        <img id="footerlogo" src="assets/images/fridgecheflogo.png">
+        <p>FRIDGE CHEF &copy; 2019</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="assets/javascript/pagetwo.js"></script>
