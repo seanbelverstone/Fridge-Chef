@@ -54,7 +54,7 @@ $(document).ready(function() {
 
                 // FOR IMAGES -------------------------
                     // adds a div for the image
-                    var cardImg = $("<div>")
+                    var cardImg = $("<div>");
 
                     // adds class and id to the image div
                         // 1. card-image = materialize card format (MUST HAVE)
@@ -64,10 +64,12 @@ $(document).ready(function() {
                     cardImg = cardImg.attr("id", "recipe-images-here");
 
                     // creates the image tag for the recipe image
+                    var imageLink = ($("<a href='finalpage.html'>"));
                     var image = $("<img>");
 
                     //adds images from API to the image tag
                     image = image.attr("src", results.recipes[i].image_url);
+                    imageLink.append(image);
 
 
                 // FOR TITLES -------------------------
@@ -81,51 +83,25 @@ $(document).ready(function() {
                     cardTitle = cardTitle.attr("class", "card-title");
                     cardTitle = cardTitle.attr("id", "recipe-titles-here");
                     caradTitle = cardTitle.text(results.recipes[i].title);
-
-
-                // FOR CONTENTS -------------------------
-                    // adds a div for the content
-                    // var cardContent = $("<div>");
-
-                    // adds class and id to the title div
-                        // 1. card-content = materialize card format (MUST HAVE)   
-                    // cardContent = cardContent.attr("class", "card-content");
-                    // cardContent = cardContent.text("Recipe Title: " + results.recipes[i].title);
-
-
-                // FOR LINKS -------------------------
-                    // adds a div for the links
-                    var link = $("<div>");
-                    // adds class and id to the title div
-                        // 1. card-action = materialize card format (MUST HAVE)
-                    link = link.attr("class", "card-action");
-
-                    // adds a clickable link
-                    var linksrc = $("<a>Recipe Link</a>");
-                    
-                    // link source from JSON format
-                    linksrc = linksrc.attr("href", results.recipes[i].source_url);
-
                     
                 // Appends the image and the title to the image div
-                    cardImg.append(image);
+                    cardImg.append(imageLink);
                     cardImg.append(cardTitle);
-
-                // Appends the link source to the link div
-                    link.append(linksrc);
                     
-                // Appends the image div, the content div, and the link div to the new card div
+                // Appends the image divto the new card div
                     newCard.append(cardImg)
-                    newCard.append(cardContent);
-                    newCard.append(link);
+
 
                 // Appends the new card to the larger container
                     $("#cards").append(newCard);
                 }
                 
+
                 repeatCard();
 
+
             };
+            
         });
     };
 
@@ -144,6 +120,12 @@ $(document).ready(function() {
                 //     console.log(storedTitle);
                 // });
 
-})  
+                
+
+});
 
 
+/*                $("img").on("click", function() {
+                    localStorage.setItem("recipeURL", ($("url")));
+                    console.log($(this));
+                })*/
