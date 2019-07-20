@@ -254,6 +254,16 @@ span {
    text-shadow: 2px 2px grey;
 }
 
+#clickimagemsg {
+   text-align: center;
+   font-family: 'Amatic SC', cursive;
+   font-size: 60px;
+   font-weight: bolder;
+   color: rgb(27, 27, 27);
+   margin-bottom: 60px;
+   margin-top: 40px;
+}
+
 .exampleSubmit {
    margin-bottom: 50px;
 }
@@ -262,9 +272,6 @@ span {
 height: 400px;
 }
 
-/* .recipe-card {
-   border: solid 2px black;
-} */
 
 .card-content {
    height: 100px;
@@ -275,20 +282,6 @@ height: 400px;
    text-shadow: 3px 3px grey;
 }
 
-/* #pageHead {
-   background-color: rgb(234,238,242);
 
-} */
-
-@media only screen and (max-width: 800px) {
-   #mainTitle {
-      font-size: 60px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-   }
-   #mainTitle p {
-      font-size: 50px;
-   }
   
 
