@@ -116,3 +116,20 @@ a .buttontext {
     background: red;
 }
 @media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }}
+
+
+#link:link {
+    color: white;
+}
+
+#link:visited {
+    color: rgb(202, 202, 202);
+}
+
+#link:hover {
+    color: red;
+}
+
+#link:active {
+    color: darkred;
+}

@@ -42,7 +42,8 @@ var questionbox = $(".questionbox");
 questionbox.append("<div>");
 questionbox.text(recipeTitle);
 questionbox.append("<img src='" + foodPic + "'>");
-
+linkToRecipe = $("<a id='link' href='" + foodUrl + "'>Click here to see the full recipe!</a>");
+questionbox.append(linkToRecipe);
 
 
 var recipe = "recipe";
