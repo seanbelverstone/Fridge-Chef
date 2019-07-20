@@ -61,8 +61,18 @@ $("#add-user").on("click", function(event) {
     localStorage.setItem("recipe", recipe);   
 });
 
-// By default display the content from localStorage
-$("#recipe").text(localStorage.getItem("recipe"));
+// // By default display the content from localStorage
+// $("#recipe").text(localStorage.getItem("recipe"));
 
     
     
+$(function () {
+    $('#email').click(function (event) {
+      var email = 'sample@gmail.com';
+      var subject = 'Test';
+      var emailBody = 'Hi Sample,';
+      var attach = 'path';
+      document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody+
+          "?attach="+attach;
+    });
+  });
