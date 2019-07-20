@@ -320,3 +320,10 @@ li {
 .container {
    background-color: rgb(117, 135, 136);
 }
+
+.notice {
+   color: white;
+   font-size: 60px;
+   font-family: 'Amatic SC', cursive;
+   text-align: center;
+}
