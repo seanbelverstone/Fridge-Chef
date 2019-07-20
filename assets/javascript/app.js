@@ -15,12 +15,14 @@ $(document).ready(function() {
     function recipeInfo() {
 
         var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=4ed288ed4b4af47c2487c9d1b2640147";
+
         console.log(queryURL);
 
         // my api key: 431843444431d180b6a297feea29edde
         // Jacob's api key: 41a415b9f58abaf64da0f2072369f676
         // Scott's api key: f4516eb74b92e1200c2a1de2939ba5da
         // KH's api key: 569763e780e654df8c9268b64763d32f
+        // Danniel's api key: ed24f7b0cbe2cc006d00257869dbe9b7
         // Sean's api key: 4ed288ed4b4af47c2487c9d1b2640147 
 
         $.ajax({
@@ -74,7 +76,6 @@ $(document).ready(function() {
                     image = image.attr("src", results.recipes[i].image_url);
                     imageLink.append(image);
 
-
                 // FOR CONTENTS -------------------------
                     // adds a div for the content
                     var cardContent = $("<div>");
@@ -82,11 +83,13 @@ $(document).ready(function() {
                     // adds class and id to the title div
                         // 1. card-content = materialize card format (MUST HAVE)   
                     cardContent = cardContent.attr("class", "card-content");
+
+                    cardContent = cardContent.text("# " + results.recipes[i].title)
+
                     cardContent = cardContent.text(results.recipes[i].title);
                     image = image.attr("name", results.recipes[i].title);
                     image = image.attr("onClick", "reply_click(this)");
                     
-
 
                 // Appends the image and the title to the image div
                     cardImg.append(imageLink);
