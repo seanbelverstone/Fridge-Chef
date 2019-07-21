@@ -5,7 +5,7 @@ var jsonArray = JSON.stringify(recipeArray).toLowerCase();
 // the above code that has been commented out isnt required as the documentation states that ingredients need to be separated by commas.
 console.log(jsonArray);
 
-
+//waits for the document to be ready before starting this function
 $(document).ready(function() {
 
 
