@@ -6,15 +6,11 @@ var jsonArray = JSON.stringify(recipeArray).toLowerCase();
 console.log(jsonArray);
 
 
-<<<<<<< HEAD
-$(document).on("click", ".exampleSubmit", function() {
-=======
 $(document).ready(function() {
 
 
     //loading bar appears in the cards section
     $("#cards").append("<div class='progress'><div class='indeterminate'></div></div>");
->>>>>>> ef401174f96f200da7d536d221b6d61f3eaf585a
 
     function recipeInfo() {
 
