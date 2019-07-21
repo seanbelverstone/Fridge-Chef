@@ -98,7 +98,6 @@ $(document).ready(function() {
                     image = image.attr("name", results.recipes[i].title);
                     image = image.attr("recipePic", results.recipes[i].image_url);
                     image = image.attr("recipeUrl", results.recipes[i].source_url);
-                    
 
                 // Appends the image and the title to the image div
                     cardImg.append(imageLink);
@@ -117,7 +116,7 @@ $(document).ready(function() {
 
                 }
                 
-
+                
                 repeatCard();
 
             };

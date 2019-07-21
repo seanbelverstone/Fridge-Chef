@@ -3,17 +3,19 @@
 <meta charset="UTF-8">
 <html>
 <head>
-        <link rel="shortcut icon" type="image/png" href="assets/images/fridgecheficon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/images/fridgecheficon.png"/>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://kit.fontawesome.com/05801f5751.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+
+        <!-- Google Font Link -->
+        <link href="https://fonts.googleapis.com/css?family=Anton|Archivo+Black|Amatic+SC|Josefin+Slab|Barriecito|Quicksand|Raleway|Julius+Sans+One&display=swap" rel="stylesheet">
     <title>Fridge Chef - Page 2</title>
 </head>
 <body>
 
-    <div class="container">
         <div class="header" id="appHeader">
             <div class="row">
                 <div class="col s12">
@@ -23,57 +25,80 @@
                 </div>
             </div>
         </div>
-    <!-- no comment -->
-        <div class="row">
-            <div class="col s4 l2">
-                <div id="ingredients">
-                    <div id="foodGroupImage"></div>
-                    <br>
-                    <h4 id="foodGroupTitle">Ingredient Type</h4>
-                    <!-- Ingredients from selected food group will append here -->
-                    <form action="#" id="ingredientSection" > <!-- class="blue-grey"-->
 
-                    </form>
+        <div class="row">
+            <div class="col s12">
+                <div class="card darken-2"> 
+                    <div class="card-image" id="jumbotron">
+                        <img src="assets/images/jumbotronImage3.png">
+                    </div>
                 </div>
             </div>
-            <div class="col s8 l6" id="fridgeContainer">
-                <!-- This is the fridge image that will have clickable areas to select food groups -->
-                <img src="assets/images/fridgeopen.png" alt="fridgeImage" id="fridge">
-                <img src="assets/images/meatpic.png" alt="protein" id="protein">
-                <img src="assets/images/grains.png" alt="grains" id="grains">
-                <img src="assets/images/fruitvegpic.png" alt="fruitandveg" id="fruitAndVeg">
-                <img src="assets/images/dairyicon.png" alt="dairy" id="dairy">
-                <img src="assets/images/condiments.png" alt="condiments" id="condiments">
-            </div>
-            <div class="col s12 l4">
-                <div id="selectedIngredients">
-                    <h4>Selected ingredients:</h4>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l1">
+                    <div id="ingredients">
+                        <div id="foodGroupImage"></div>
+                        <br>
+                        <h5 id="foodGroupTitle">Ingredient Type</h5>
+                        <!-- Ingredients from selected food group will append here -->
+                        <form action="#" id="ingredientSection" > <!-- class="blue-grey"-->
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col l2"></div>
+
+                <div class="col s12 m12 l5" id="fridgeContainer">
+                    <!-- This is the fridge image that will have clickable areas to select food groups -->
+                    <img src="assets/images/fridgeopen.png" alt="fridgeImage" id="fridge">
+                    <img src="assets/images/meatpic.png" alt="protein" id="protein">
+                    <img src="assets/images/grains.png" alt="grains" id="grains">
+                    <img src="assets/images/fruitvegpic.png" alt="fruitandveg" id="fruitAndVeg">
+                    <img src="assets/images/dairyicon.png" alt="dairy" id="dairy">
+                    <img src="assets/images/condiments.png" alt="condiments" id="condiments">
+                </div>
+
+                <div class="col l3"></div>
+
+                <div class="col s12 m12 l1">
+                    <div id="selectedIngredients">
+                        <h5 id="selectedGroupTitle">Selected ingredients:</h5>
                         <div id="selectedIngredientsList">
                             <!-- Ingredients that have already been selected will append here -->
                         </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                <a href="pageThree.html">
-                    <button 
-                        class="btn waves-effect waves-green" 
-                        id="submit" 
-                        type="submit" 
-                        name="action">
-                            Submit
-                    </button>
-                </a>
+
+            <div class="row">
+                <div class="col s3 m4 l5"></div>
+
+                <div class="col s6 m4 l2">
+                    <a href="pageThree.html">
+                        <button 
+                            class="btn waves-effect waves-green" 
+                            id="submit" 
+                            type="submit" 
+                            name="action">
+                                Submit
+                        </button>
+                    </a>
+                </div>
+
+                <div class="col s3 m4 l5"></div>
             </div>
-        </div>
 
         <!-- <button >execute</button> -->
         </div> <!-- Closing container div --> 
+
     <footer>
         <img id="footerlogo" src="assets/images/fridgecheflogo.png">
         <p>FRIDGE CHEF &copy; 2019</p>
     </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="assets/javascript/pagetwo.js"></script>
