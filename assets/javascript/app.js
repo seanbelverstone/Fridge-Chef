@@ -5,7 +5,7 @@ var jsonArray = JSON.stringify(recipeArray).toLowerCase();
 // the above code that has been commented out isnt required as the documentation states that ingredients need to be separated by commas.
 console.log(jsonArray);
 
-
+//waits for the document to be ready before starting this function
 $(document).ready(function() {
 
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
 
     function recipeInfo() {
 
-        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=4ed288ed4b4af47c2487c9d1b2640147";
+        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=5cb31501fed0cde5ca4f43d7c223b03a";
 
         console.log(queryURL);
 
@@ -24,6 +24,7 @@ $(document).ready(function() {
         // KH's api key: 569763e780e654df8c9268b64763d32f
         // Danniel's api key: ed24f7b0cbe2cc006d00257869dbe9b7
         // Sean's api key: 4ed288ed4b4af47c2487c9d1b2640147 
+        // Lorena's api key: 5cb31501fed0cde5ca4f43d7c223b03a
 
         $.ajax({
             url: queryURL,
@@ -38,7 +39,12 @@ $(document).ready(function() {
             $("#recipe-images-here").empty();
             console.log(response);
 
-
+            if (results.count === 0) {
+                var notice = $("<div>");
+                notice.append("<p class=notice>Oops! Looks like there aren't any recipes for that search.</p>");
+                notice.append("<p class=notice>Please try refining your ingredients</p>");
+                $("#cards").append(notice);
+            }
 
             for (var i = 0; i < results.recipes.length; i++) {
                 console.log(results.recipes[i]);
@@ -87,9 +93,12 @@ $(document).ready(function() {
                     cardContent = cardContent.text("# " + results.recipes[i].title)
 
                     cardContent = cardContent.text(results.recipes[i].title);
-                    image = image.attr("name", results.recipes[i].title);
+
+                    // THE SECRET SAUCE!!! On click, we run a function that looks at THIS (the thing we clicked) 
                     image = image.attr("onClick", "reply_click(this)");
-                    
+                    image = image.attr("name", results.recipes[i].title);
+                    image = image.attr("recipePic", results.recipes[i].image_url);
+                    image = image.attr("recipeUrl", results.recipes[i].source_url);
 
                 // Appends the image and the title to the image div
                     cardImg.append(imageLink);
@@ -108,7 +117,7 @@ $(document).ready(function() {
 
                 }
                 
-
+                
                 repeatCard();
 
             };
@@ -139,6 +148,11 @@ $(document).ready(function() {
 function reply_click(clicked_object)
 {
      var recipeTitle = (clicked_object.getAttribute('name'));
+     var foodUrl = (clicked_object.getAttribute('recipeUrl'));
+     var foodPic = (clicked_object.getAttribute('recipePic'));   
+     
      console.log("The recipe title is: " + recipeTitle);
      localStorage.setItem("recipe title", recipeTitle);
+     localStorage.setItem("foodLink", foodUrl);
+     localStorage.setItem("foodImg", foodPic);
 }

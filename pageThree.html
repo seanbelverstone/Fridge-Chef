@@ -8,11 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Link CSS files -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/fridgecheficon.png"/>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">   
 
     <!-- Link Bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
     <!-- Materialize Links -->
         <!-- #1 Link Compiled and minified CSS -->
@@ -54,11 +55,19 @@
 
     <div class="row" id="clickimagemsg">
         <div class="col s12">
-            <p>"Click the Image below to get your Recipe!"</p>
+            <p>Click the Image below to get your Recipe!</p>
         </div>
+        <a href="ingredients.html">
+                <button 
+                    class="btn waves-effect waves-green" 
+                    id="return" 
+                    type="submit" 
+                    name="action">
+                        Return to ingredients
+                </button>
     </div>
 
-    <div class="container">
+    <div class="container container-recipe">
         <div class="row">
             <div class="col s12 m12 l12" id="cards"></div>
         </div>

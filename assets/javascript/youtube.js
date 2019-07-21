@@ -19,8 +19,35 @@
 // Set recipe variable for concatanation purposes. CHANGE recipe variable to whatever the "Card Title" that was clicked from previous page
 // Variable set for embedded video url which was concatenated from 3 pieces: API, ingredients variable
 
+
+// localStorage.setItem("recipe title", recipeTitle);
+var recipeTitle = localStorage.getItem("recipe title");
+recipeTitle.toLowerCase();
+console.log(recipeTitle);
+
+
+// localStorage.setItem("foodLink", foodUrl);
+var foodUrl = localStorage.getItem("foodLink");
+foodUrl.toLowerCase();
+console.log(foodUrl);
+
+
+// localStorage.setItem("foodImg", foodPic);
+var foodPic = localStorage.getItem("foodImg");
+foodPic.toLowerCase();
+console.log(foodPic);
+
+
+var questionbox = $(".questionbox");
+questionbox.append("<div>");
+questionbox.text(recipeTitle);
+questionbox.append("<img src='" + foodPic + "'>");
+linkToRecipe = $("<a id='link' href='" + foodUrl + "'>Click here to see the full recipe!</a>");
+questionbox.append(linkToRecipe);
+
+
 var recipe = "recipe";
-var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAJKq4nry6sTao5faz_V2mxmYnAOwrYyF0&q=" + recipe +"recipe&part=snippet";
+var url = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAJKq4nry6sTao5faz_V2mxmYnAOwrYyF0&q=" + recipeTitle +"recipe&part=snippet";
 
 // DZ: Ajax call
 $.ajax(
@@ -40,64 +67,23 @@ $.ajax(
     $("#embedVideo").append(iFrame);
 });
 
+$(function () {
+    $('#emailButton').click(function () {
+        var subject = "Fridge-Chef: Here's your recipe!"
+        var emailBody = 'Hi there! Your recipe link is: ';
+        var email = "";
+
+        // document.location =
+        var emailLink = $("#emailLink");
+        emailLink.attr("href", "mailto:" + email + "?subject=" + subject + "&body=" + emailBody + foodUrl);
+    });
+  });
+
 /*====================================================
 What's left to do:
 1. Replace the recipe variable with the title of the card that was clicked on previous page
-        a. Have the onclicked title saved onto local storage
-        b. insert this title into recipe variable
-2. Grab page url/recipe and slap into body of email message
+        a. Have the onclicked title saved onto local storage DONE
+        b. insert this title into recipe variable DONE
+2. Grab page url/recipe and slap into body of email message DONE
 ====================================================*/
 
-// Capture Button Click - !! What did Ryan Call this on his page?!!
-// $("#add-user").on("click", function(event) {
-//     // prevent page from refreshing when form tries to submit itself
-//     event.preventDefault();
-//     // Capture user input and stores it into variables
-//     var recipe = $("#name-input").val().trim(); 
-//     // Console log each of the user inputs to confirm we are receiving them
-//     console.log(recipe);
-//     // Clear localStorage
-//     localStorage.clear();
-//     // Store all content into localStorage
-//     localStorage.setItem("recipe", recipe);   
-// });
-
-<<<<<<< HEAD
-// By default display the content from localStorage
-// $("#recipe").text(localStorage.getItem("recipe"));
-
-getObject = JSON.parse(localStorage.getItem(results.recipe[i].title));
-    console.log(results.recipe[i].title);
-
-
-// Would this be used to store clicked onbject locally?
-    // $('This').on("click", function(event) {
-    //     event.preventDefault();
-    //     var recipe = $(This.val().trim());
-    //         console.log(recipe)
-    //     localStorage.clear();
-    //     localStorage.setItem("recipe", recipe);
-    // });
-
-// grab localStorage data on click and create a list
-// save.addEventListener('click', function() {
-//     var storedTitle = JSON.parse(localStorage.getItem(results.recipe[i].title)); 
-//         console.log(results.recipe[i].title);
-//     })
-=======
-// // By default display the content from localStorage
-// $("#recipe").text(localStorage.getItem("recipe"));
-
-    
-    
-$(function () {
-    $('#email').click(function (event) {
-      var email = 'sample@gmail.com';
-      var subject = 'Test';
-      var emailBody = 'Hi Sample,';
-      var attach = 'path';
-      document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody+
-          "?attach="+attach;
-    });
-  });
->>>>>>> c19fb0e50cc7356e5fd329db54284c1afe47a591

@@ -8,10 +8,24 @@ body {
 }
 
 #recipe_Img {
-    /* background-color: blue; */
     float: left;
     margin-top: -5px;
 }
+
+.header {
+    padding-top: 30px;
+    padding-bottom: 10px;
+ }
+ 
+ #logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+    opacity: 0.9;
+    text-align: center;
+ }
 
 /* .boxed {
     height: 170px;
@@ -101,3 +115,20 @@ a .buttontext {
     background: red;
 }
 @media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }}
+
+
+#link:link {
+    color: white;
+}
+
+#link:visited {
+    color: rgb(202, 202, 202);
+}
+
+#link:hover {
+    color: red;
+}
+
+#link:active {
+    color: darkred;
+}

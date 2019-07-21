@@ -134,8 +134,47 @@ footer p {
 
 /*Ingredients page styling*/
 
+#ingredients {
+   text-align:left;
+   min-height: 100px;
+   min-width: 200px; 
+   background-color: rgb(117, 135, 136);
+   border: 3px dashed black;
+   font-family: 'Julius Sans One', sans-serif;
+   font-size: 1.5rem;
+}
+
 #selectedIngredients {
-   margin-left: 100px;
+   text-align: right;
+   min-width: 200px;
+   min-height: 100px;
+   background-color: rgb(117, 135, 136);
+   border: 3px dashed black;
+   font-family: 'Julius Sans One', sans-serif;
+   font-size: 1.5rem;
+}
+
+#foodGroupTitle {
+   margin-left:10px;
+   font-family: 'Julius Sans One', sans-serif;
+}
+
+#selectedGroupTitle {
+   margin-right: 10px;
+   /* margin-top: 25px; */
+   padding: 20px 0 25px 0;
+   font-family: 'Julius Sans One', sans-serif;
+}
+
+span {
+   font-family: 'Indie Flower', cursive;
+   color:black;
+   padding:10px;
+   margin:5px;
+}
+
+#selectedIngredientsList {
+   font-family: 'Indie Flower', cursive;
 }
 
 #fridgeContainer {
@@ -162,20 +201,6 @@ footer p {
 
 .checkBox {
    color:white;
-}
-
-#ingredients {
-   text-align:left;
-   height:auto;
-   background-color:rgb(189, 189, 189);
-   border: 3px dashed black;
-}
-
-span {
-   font-family: 'Indie Flower', cursive;
-   color:black;
-   padding:10px;
-   margin:5px;
 }
 
 [type="checkbox"]+span:not(.lever) {
@@ -256,25 +281,6 @@ span {
    opacity: 0.9;
 }
 
-
-
-#selectedIngredients {
-   text-align: right;
-   height:auto;
-   background-color:rgb(189, 189, 189);
-   border: 3px dashed black;
-   font-family: 'Indie Flower', cursive;
-   font-size: 1.5rem;
-   margin-top:5px;
-   margin-left: 40%;
-}
-
-#foodGroupTitle {
-   font-family: 'Indie Flower', cursive;
-   margin-left:15px;
-   /* text-align:center; */
-}
-
 li {
    padding:5px;
    margin-top: 10px;
@@ -282,103 +288,54 @@ li {
 }
 
 #submit {
-   margin-right: 50%;
-   margin-left: 43%;
-   padding: 20px 75px 50px 75px;
-   vertical-align:middle;
-
-   margin-left: 50%;
+   /* margin-right: 50%;  */
+   /* margin-left: 43%; */
+   /* padding: 20px 50px; */
+   /* vertical-align: middle; */
+   /* margin-left: 50%; */
+   text-align: center;
+   width: 170px;
+   height: 60px;
+   font-size: 20px;
+   font-weight: bolder;
+   margin-bottom: 40px;
+   /* padding: 30px; */
 }
 
 /* Page three CSS */
-
-.card {
-   border-radius: 10px;
-}
-
-#mainTitle {
-   font-size: 90px;
-   color: white;
-}
-
 
 #clickimagemsg {
    text-align: center;
    font-family: 'Amatic SC', cursive;
    font-size: 60px;
    font-weight: bolder;
-   text-shadow: 3px 3px grey;
-   margin-left: 20px;
-}
-
-#mainTitle p {
-   /* margin-bottom: 30px; */
-   font-size: 70px;
-   color: white;
-   font-family: 'Amatic SC', cursive;
-   text-shadow: 2px 2px grey;
-}
-
-.exampleSubmit {
-   margin-bottom: 50px;
-}
-
-.image-size img{
-height: 400px;
-   color: rgb(27, 27, 27);
-   margin-bottom: 60px;
-   margin-top: 40px;
-}
-
-/* .recipe-card {
-   border: solid 2px black;
-} */
-
-.card-content {
-   height: 100px;
-   font-size: 20px;
-   font-weight: bold;
-   font-family: 'Julius Sans One', sans-serif;
-   font-weight: bolder;
-   min-height: 100px;
-   vertical-align: middle;
-}
-
-label {
-   color:rgb(92, 92, 92);
-   padding:5px;
 }
 
 .image-size img{
    height: 400px;
+   color: rgb(27, 27, 27);
+   margin-top: 30px;
 }
 
-#recipe-titles-here {
+.card-content {
+   font-size: 20px;
+   font-family: 'Julius Sans One', sans-serif;
    font-weight: bolder;
-   text-shadow: 3px 3px grey;
+   min-height: 150px;
+   vertical-align: middle;
 }
 
 .recipe-card {
-   width: 369px !important;
    border: 5px solid rgb(117, 135, 136);
 }
 
-/* #pageHead {
-   background-color: rgb(234,238,242);
-.container {
+.container-recipe {
    background-color: rgb(117, 135, 136);
-   margin-bottom: 30px;
 }
 
-} */
-
-@media only screen and (max-width: 800px) {
-   #mainTitle {
-      font-size: 60px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-   }
-   #mainTitle p {
-      font-size: 50px;
-   }
+.notice {
+   color: white;
+   font-size: 60px;
+   font-family: 'Amatic SC', cursive;
+   text-align: center;
+}
