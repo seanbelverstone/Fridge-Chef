@@ -14,7 +14,11 @@ $(document).ready(function() {
 
     function recipeInfo() {
 
+<<<<<<< HEAD
         var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=d1d248988a5546b54f51778dbdffe024";
+=======
+        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
+>>>>>>> master
 
         console.log(queryURL);
 
@@ -52,19 +56,19 @@ $(document).ready(function() {
 
                 function repeatCard() {
 
-                // FOR NEW CARDS ----------------------
+                    // FOR NEW CARDS ----------------------
                     // creates the new card for the recipe
                     var newCard = $("<div>")
 
                     // Giving newCard a class
-                        // 1. card = materialize card format (MUST HAVE)
-                        // 2. recipe-card = for style.css
-                        // 3. col s12 m6 l4 = for responsiveness with materialize 
+                    // 1. card = materialize card format (MUST HAVE)
+                    // 2. recipe-card = for style.css
+                    // 3. col s12 m6 l4 = for responsiveness with materialize 
 
                     newCard = newCard.attr("class","card recipe-card col s12 m6 l4");
 
 
-                // FOR IMAGES -------------------------
+                    // FOR IMAGES -------------------------
                     // adds a div for the image
                     var cardImg = $("<div>");
 
@@ -83,7 +87,7 @@ $(document).ready(function() {
                     image = image.attr("src", results.recipes[i].image_url);
                     imageLink.append(image);
 
-                // FOR CONTENTS -------------------------
+                    // FOR CONTENTS -------------------------
                     // adds a div for the content
                     var cardContent = $("<div>");
 
@@ -95,25 +99,27 @@ $(document).ready(function() {
 
                     // cardContent = cardContent.text(results.recipes[i].title);
 
-                    // THE SECRET SAUCE!!! On click, we run a function that looks at THIS (the thing we clicked) 
+                    // SCOTT: THE SECRET SAUCE!!! Each image that is added is given an onClick function, 
+                        // and On click, we run a function that looks at THIS (the thing we clicked) by passing 
+                        // it in as an argument to the function
                     image = image.attr("onClick", "reply_click(this)");
+                    // SCOTT: The Dumbwaiter/dead-drop. We take the recipe image URL, recipe source URL, and 
+                        // recipe title, which we're going to need later, and we're storing them publicly into the 
+                        // HTML itself. This allows the global scope function reply_click to be able to access this 
+                        // info, later on when the user actually clicks.
                     image = image.attr("name", results.recipes[i].title);
                     image = image.attr("recipePic", results.recipes[i].image_url);
                     image = image.attr("recipeUrl", results.recipes[i].source_url);
 
-                // Appends the image and the title to the image div
+                    // Appends the image and the title to the image div
                     cardImg.append(imageLink);
-                    // cardImg.append(cardTitle);
-
-                // Appends the link source to the link div
-                    // link.append(linksrc);
                     
-                // Appends the image div, the content div, and the link div to the new card div
+                    // Appends the image div, the content div, and the link div to the new card div
                     newCard.append(cardImg)
                     newCard.append(cardContent);
                     // newCard.append(link);
 
-                // Appends the new card to the larger container
+                    // Appends the new card to the larger container
                     $("#cards").append(newCard);
 
                 }
@@ -127,20 +133,6 @@ $(document).ready(function() {
     };
 
     recipeInfo();
-
-
-                // //on recipe click
-                // save.addEventListener('click', function() {
-                //     //clear local storage
-                //     localStorage.clear();
-                //     //set recipe title to save in local storage
-                //     var storedTitle = localStorage.setItem($("recipe-titles-here").val())); 
-                //     //console log to check it's working
-                //     console.log("Recipe title below");
-                //     console.log(results.recipe[i].title);
-                //     console.log(storedTitle);
-                // });
-
                 
 
 });
@@ -148,12 +140,12 @@ $(document).ready(function() {
 
 function reply_click(clicked_object)
 {
-     var recipeTitle = (clicked_object.getAttribute('name'));
-     var foodUrl = (clicked_object.getAttribute('recipeUrl'));
-     var foodPic = (clicked_object.getAttribute('recipePic'));   
+    var recipeTitle = (clicked_object.getAttribute('name'));
+    var foodUrl = (clicked_object.getAttribute('recipeUrl'));
+    var foodPic = (clicked_object.getAttribute('recipePic'));   
      
-     console.log("The recipe title is: " + recipeTitle);
-     localStorage.setItem("recipe title", recipeTitle);
-     localStorage.setItem("foodLink", foodUrl);
-     localStorage.setItem("foodImg", foodPic);
+    console.log("The recipe title is: " + recipeTitle);
+    localStorage.setItem("recipe title", recipeTitle);
+    localStorage.setItem("foodLink", foodUrl);
+    localStorage.setItem("foodImg", foodPic);
 }

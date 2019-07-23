@@ -90,11 +90,11 @@ $(document).on("click", ".checkBox", function() {
        console.log("box should be unchecked");
 
        //stores the index position of the selected text into a variable
-    //    var indexOfIngredient = selectedIngredients.indexOf(selectedText);
+        //    var indexOfIngredient = selectedIngredients.indexOf(selectedText);
 
-    // Filter ! This goes through the array, comparing each ingredient against the selectedText.
-    // if it returns TRUE, it keeps going
-    // if it returns FALSE, it removes it and keeps going
+        // Filter ! This goes through the array, comparing each ingredient against the selectedText.
+        // if it returns TRUE, it keeps going
+        // if it returns FALSE, it removes it and keeps going
        selectedIngredients = selectedIngredients.filter(ingredient => ingredient !== selectedText)
 
         selectedIngredientsRefresh();
