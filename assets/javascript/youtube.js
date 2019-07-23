@@ -25,6 +25,7 @@ var recipeTitle = localStorage.getItem("recipe title");
 recipeTitle.toLowerCase();
 console.log(recipeTitle);
 
+$("#recipeTitleText").text(recipeTitle);
 
 // localStorage.setItem("foodLink", foodUrl);
 var foodUrl = localStorage.getItem("foodLink");
@@ -40,9 +41,9 @@ console.log(foodPic);
 
 var questionbox = $(".questionbox");
 questionbox.append("<div>");
-questionbox.text(recipeTitle);
+// questionbox.text(recipeTitle);
 questionbox.append("<img src='" + foodPic + "'>");
-linkToRecipe = $("<a id='link' href='" + foodUrl + "'>Click here to see the full recipe!</a>");
+linkToRecipe = $("<a id='link' href='" + foodUrl + "'><button class='btn waves-effect waves-light'>Show Full Recipe</button></a>");
 questionbox.append(linkToRecipe);
 
 
@@ -59,8 +60,8 @@ $.ajax(
     console.log(result.items[0].id.videoId);
 // taking the above info to fill out an iframe and add attributes to it- height, width, autoplay, and source
     var iFrame = $("<iframe>");
-    iFrame.attr("height", "315");
-    iFrame.attr("width", "560");
+    iFrame.attr("height", "294");
+    iFrame.attr("width", "391");
     iFrame.attr("allow", "autoplay; encrypted-media");
     iFrame.attr("src", "https://www.youtube.com/embed/" + result.items[0].id.videoId);
 //selects id to append and adds iframe

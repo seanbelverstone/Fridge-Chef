@@ -14,11 +14,16 @@ $(document).ready(function() {
 
     function recipeInfo() {
 
+<<<<<<< HEAD
+        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=d1d248988a5546b54f51778dbdffe024";
+=======
         var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
+>>>>>>> master
 
         console.log(queryURL);
 
         // my api key: 431843444431d180b6a297feea29edde
+        // my 2nd key: d1d248988a5546b54f51778dbdffe024
         // Jacob's api key: 41a415b9f58abaf64da0f2072369f676
         // Scott's api key: f4516eb74b92e1200c2a1de2939ba5da
         // KH's api key: 569763e780e654df8c9268b64763d32f
@@ -88,11 +93,11 @@ $(document).ready(function() {
 
                     // adds class and id to the title div
                         // 1. card-content = materialize card format (MUST HAVE)   
-                    cardContent = cardContent.attr("class", "card-content");
+                    cardContent = cardContent.attr("class", "card-content title-section");
 
                     cardContent = cardContent.text("# " + results.recipes[i].title)
 
-                    cardContent = cardContent.text(results.recipes[i].title);
+                    // cardContent = cardContent.text(results.recipes[i].title);
 
                     // SCOTT: THE SECRET SAUCE!!! Each image that is added is given an onClick function, 
                         // and On click, we run a function that looks at THIS (the thing we clicked) by passing 

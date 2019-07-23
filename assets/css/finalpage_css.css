@@ -7,16 +7,11 @@ body {
     opacity: 0.8;
 }
 
-#recipe_Img {
-    float: left;
-    margin-top: -5px;
-}
-
 .header {
     padding-top: 30px;
     padding-bottom: 10px;
  }
- 
+
  #logo {
     display: block;
     margin-left: auto;
@@ -26,59 +21,64 @@ body {
     opacity: 0.9;
     text-align: center;
  }
-
-/* .boxed {
-    height: 170px;
-    font-size: 30px;
-    font-family: 'Julius Sans One', sans-serif;
-    opacity: 0.8;
-    border-radius: 10px;
-    border: 3px dashed black;
-    text-align: center;
- } */
+/* --------- */
 
  .blue-grey {
-    min-height: 170px;
+    height: 550px;
+    max-width: 450px;
     font-size: 30px;
     font-family: 'Julius Sans One', sans-serif;
     opacity: 0.9;
-    border-radius: 10px;
     border: 3px dashed black;
     text-align: center;
     display: inline-block;
+    margin-bottom: 30px;
  }
 
-  h2  {
-      margin-top: 20px;
-      margin-bottom: 50px;
-  }
-
-.youtube {
-    background-color: white;
-    color: black;
-    width: 400x;
-    height: 305px;
-    border: 15px solid green;
-    padding: 0px;
-    margin-top: 25px;
-    /* display:inline-block; */
-    float: right;
-    padding-right: 100px;
-    margin-bottom: 50px;
-}
-
-#email {
-    float:left;
-    align-content: center;
-    margin-top: 20px;
-}
-
-button {
+/* --------- */
+#recipeTitleText {
+    height: 80px;
+    margin-top: 24px;
+    margin: 24px 12px 0 12px;
     text-align: center;
-    display: inline-block;
     color: white;
-    padding: 0px 16px;
 }
+#watchVideo {
+    height: 104px;
+}
+/* --------- */
+
+ .questionbox img{
+    width: 400px;
+    height: 300px;
+    margin-bottom: 25px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+#embedVideo {
+    height: 300px;
+    margin-bottom: 35px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+/* --------- */
+
+.card-content a {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+#yourRecipeText h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+}
+/* --------- */
 
 .iframe-container{
     position: relative;
@@ -93,42 +93,89 @@ button {
     margin-bottom: 10px;
 }
 
-button {
-    background:teal;
+/* Buttons */
+#emailButton,
+#returnButton {
+    align-content: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+    width: 450px;
+    height: 50px;
+    border: 3px solid white;
+    border-radius: 10px;
+    text-decoration: none;
 }
 
-a {
-    color: white;
+#returnButton:hover,
+#emailButton:hover {
+    background-color: rgb(248, 117, 117);
+}
+
+#returnButton a {
+    text-decoration: none;
 }
 
 a .buttontext {
     color: white;
-    text-decoration: none;
-    text-decoration-line: none;
+    font-size: 20px;
 }
 
-.container {
-    text-align: center;
-}
 
-.btn {
-    background: red;
-}
 @media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }}
 
 
-#link:link {
+
+#link .btn{
     color: white;
+    font-size: 20px;
+    height: 40px;
+    background-color: orange;
+    border: 2px solid white;
+    border-radius: 8px;
 }
 
-#link:visited {
-    color: rgb(202, 202, 202);
+#link .btn:hover {
+    background-color: rgb(248, 136, 136);
 }
 
-#link:hover {
-    color: red;
-}
 
-#link:active {
-    color: darkred;
-}
+
+/* Footer */
+footer {
+    background-color: rgb(117, 135, 136);
+    bottom: 0px;
+    border-top: 2px dashed black;
+ }
+ 
+ #footerlogo {
+    display: block;
+    margin: 20px auto 15px auto;
+    width: 150px;
+    height: 150px;
+    opacity: 0.9;
+    text-align: center;
+ }
+ 
+ footer #copyright {
+    text-align: center;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+ }
+ 
+ footer 
+ #member1,
+ #member2 {
+    text-align: center;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+ }
+
+ footer #member2 {
+     padding-bottom: 20px;
+ }
