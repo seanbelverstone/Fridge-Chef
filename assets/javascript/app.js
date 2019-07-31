@@ -14,11 +14,8 @@ $(document).ready(function() {
 
     function recipeInfo() {
 
-<<<<<<< HEAD
-        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=d1d248988a5546b54f51778dbdffe024";
-=======
         var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
->>>>>>> master
+
 
         console.log(queryURL);
 
