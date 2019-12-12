@@ -14,19 +14,10 @@ $(document).ready(function() {
 
     function recipeInfo() {
 
-        var queryURL = "https://www.food2fork.com/api/search?q=" + jsonArray + "&key=f4516eb74b92e1200c2a1de2939ba5da";
+        var queryURL = "https://crossorigin.me/https://api.edamam.com/search/q=" + jsonArray + "&app_id=f18cd003&app_key=4e0c932fa1b0050f9146464e54d8f042";
 
 
         console.log(queryURL);
-
-        // my api key: 431843444431d180b6a297feea29edde
-        // my 2nd key: d1d248988a5546b54f51778dbdffe024
-        // Jacob's api key: 41a415b9f58abaf64da0f2072369f676
-        // Scott's api key: f4516eb74b92e1200c2a1de2939ba5da
-        // KH's api key: 569763e780e654df8c9268b64763d32f
-        // Danniel's api key: ed24f7b0cbe2cc006d00257869dbe9b7
-        // Sean's api key: 4ed288ed4b4af47c2487c9d1b2640147 
-        // Lorena's api key: 5cb31501fed0cde5ca4f43d7c223b03a
 
         $.ajax({
             url: queryURL,
